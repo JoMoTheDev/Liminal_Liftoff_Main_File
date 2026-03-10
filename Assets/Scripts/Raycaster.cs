@@ -10,7 +10,7 @@ public class Raycaster : MonoBehaviour
         RaycastHit hit;
         Vector3 direction = transform.TransformDirection(Vector3.forward);
 
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetKeyDown(KeyCode.F))
         {
             if (Physics.Raycast(transform.position, direction, out hit, raycastDistance, collisionLayers))
             {
