@@ -1,9 +1,21 @@
 using UnityEngine;
+using System.Collections;
 
 public class Raycaster : MonoBehaviour
 {
     public float raycastDistance = 10f;
+
+    public int keyAmount = 0;
+
     public LayerMask collisionLayers;
+    public LayerMask interactLayer;
+
+    private KeyManager keyManager;
+
+    void Start()
+    {
+        keyManager = GetComponent<KeyManager>();
+    }
 
     private void Update()
     {
@@ -21,6 +33,13 @@ public class Raycaster : MonoBehaviour
             {
                 Debug.DrawRay(transform.position, direction * raycastDistance, Color.red);
                 Debug.Log("Nothing here!");
+            }
+        }
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            if (Physics.Raycast(transform.position, direction, out hit, raycastDistance, interactLayer))
+            {
+                keyManager.Interact(hit.transform.gameObject);
             }
         }
     }

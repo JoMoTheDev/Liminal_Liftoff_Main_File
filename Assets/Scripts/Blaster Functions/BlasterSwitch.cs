@@ -10,8 +10,8 @@ public class BlasterSwitch : MonoBehaviour
     {
         blasterModes = new MonoBehaviour[]
         {
-            playerCamera.GetComponent<BlasterLight>(),
             playerCamera.GetComponent<BlasterGravity>(),
+            playerCamera.GetComponent<BlasterLight>(),
             playerCamera.GetComponent<BlasterForce>(),
             playerCamera.GetComponent<BlasterShoot>()
         };
