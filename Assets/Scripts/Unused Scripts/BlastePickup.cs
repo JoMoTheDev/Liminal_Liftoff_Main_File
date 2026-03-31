@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class BlasterGrab : MonoBehaviour
+public class BlasterPickup : MonoBehaviour
 {
     [Header("References")]
     public GameObject player;
@@ -12,8 +12,6 @@ public class BlasterGrab : MonoBehaviour
 
     [Header("Values")]
     public float raycastDistance = 10f;
-    public float throwForce = 500f;
-    private float rotationSensitivity = 1f; //Speed of object rotation in relation to the mouse
     private bool canDrop = true;
     private int LayerNumber; //Layer index
 
@@ -61,11 +59,9 @@ public class BlasterGrab : MonoBehaviour
         if (heldObject != null)
         {
             MoveObject();
-            RotateObject();
             if (Input.GetMouseButtonDown(1) && canDrop == true)
             {
                 StopClipping();
-                ThrowObject();
             }
         }
     }
@@ -80,14 +76,14 @@ public class BlasterGrab : MonoBehaviour
             heldObjectRb.transform.parent = holdPosition.transform; //Parent Object to HoldPosition
             heldObject.layer = LayerNumber; //Change the object layer to HoldLayer
             //Make sure the object doesn't collide with the player
-            Physics.IgnoreCollision(heldObject.GetComponent<Collider>(), player.GetComponent<Collider>(), true);
+            Physics.IgnoreCollision(heldObject.GetComponent<Collider>(), player.GetComponentInChildren<Collider>(), true);
         }
     }
 
     private void DropObject()
     {
         //Re-enable object collisions
-        Physics.IgnoreCollision(heldObject.GetComponent<Collider>(), player.GetComponent<Collider>(), false);
+        Physics.IgnoreCollision(heldObject.GetComponent<Collider>(), player.GetComponentInChildren<Collider>(), false);
         heldObject.layer = 0; //Assign object to default layer
         heldObjectRb.isKinematic = false;
         heldObject.transform.parent = null; //Unparent the object
@@ -97,38 +93,7 @@ public class BlasterGrab : MonoBehaviour
     private void MoveObject()
     {
         //Keep the Object locked at HoldPosition
-        heldObject.transform.position = holdPosition.transform.position;
-    }
-
-    private void RotateObject()
-    {
-        if (Input.GetKey(KeyCode.R))
-        {
-            canDrop = false;
-
-            //Need to find a way to disable to camera movement
-
-            float XaxisRotation = Input.GetAxis("Mouse X") * rotationSensitivity;
-            float YaxisRotation = Input.GetAxis("Mouse Y") * rotationSensitivity;
-            heldObject.transform.Rotate(Vector3.down, XaxisRotation);
-            heldObject.transform.Rotate(Vector3.right, YaxisRotation);
-        }
-        else
-        {
-            //Then re-enable them here
-            canDrop = true;
-        }
-    }
-
-    private void ThrowObject()
-    {
-        //Same process as before, just with adding a force
-        Physics.IgnoreCollision(heldObject.GetComponent<Collider>(), player.GetComponent<Collider>(), false);
-        heldObject.layer = 0;
-        heldObjectRb.isKinematic = false;
-        heldObject.transform.parent = null;
-        heldObjectRb.AddForce(transform.forward * throwForce);
-        heldObject = null;
+        heldObject.transform.localPosition = Vector3.zero;
     }
 
     private void StopClipping() //Function called with dropping/throwing object
