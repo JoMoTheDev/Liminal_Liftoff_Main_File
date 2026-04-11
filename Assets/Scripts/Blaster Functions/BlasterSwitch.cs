@@ -2,63 +2,32 @@ using UnityEngine;
 
 public class BlasterSwitch : MonoBehaviour
 {
-    private BlasterShoot blasterShoot;
-    private BlasterGravity blasterGravity;
-    private BlasterForce blasterForce;
-    private BlasterGrab blasterGrab;
-    public GameObject playerCamera;
-    public blasterState state;
+    [SerializeField] private GameObject playerCamera;
 
-    public enum blasterState
-    {
-        Shoot,
-        Gravity,
-        Grab,
-        Force
-    }
+    private MonoBehaviour[] blasterModes;
 
     private void Start()
     {
-        blasterShoot = playerCamera.GetComponent<BlasterShoot>();
-        blasterGravity = playerCamera.GetComponent<BlasterGravity>();
-        blasterForce = playerCamera.GetComponent<BlasterForce>();
-        blasterGrab = playerCamera.GetComponent<BlasterGrab>();
+        blasterModes = new MonoBehaviour[]
+        {
+            playerCamera.GetComponent<BlasterGravity>(),
+            playerCamera.GetComponent<BlasterLight>(),
+            playerCamera.GetComponent<BlasterForce>(),
+            playerCamera.GetComponent<BlasterShoot>()
+        };
+    }
+    
+    void ActivateModes(int index)
+    {
+        for (int i = 0; i < blasterModes.Length; i++)
+            blasterModes[i].enabled = i == index;
     }
 
     private void Update()
     {
-        StateSwitch();
-
-        if (Input.GetKeyDown(KeyCode.Alpha1))
-        {
-            state = blasterState.Shoot;
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            state = blasterState.Gravity;
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha3))
-        {
-            state = blasterState.Grab;
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha4))
-        {
-            state = blasterState.Force;
-        }
-    }
-
-    public void StateSwitch()
-    {
-        switch (state)
-        {
-            case blasterState.Shoot:
-                break;
-            case blasterState.Gravity:
-                break;
-            case blasterState.Grab:
-                break;
-            case blasterState.Force:
-                break;
-        }
+        if (Input.GetKeyDown(KeyCode.Alpha1)) ActivateModes(0);
+        if (Input.GetKeyDown(KeyCode.Alpha2)) ActivateModes(1);
+        if (Input.GetKeyDown(KeyCode.Alpha3)) ActivateModes(2);
+        if (Input.GetKeyDown(KeyCode.Alpha4)) ActivateModes(3);
     }
 }

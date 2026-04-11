@@ -22,7 +22,7 @@ public class BlasterForce : MonoBehaviour
                     Debug.Log("Begone!");
 
                     Rigidbody rb = hit.rigidbody;
-                    rb.AddForce(direction * launchForce, ForceMode.Impulse);
+                    rb.AddForce(direction * launchForce * Time.deltaTime, ForceMode.Impulse);
                 }
                 else
                 {

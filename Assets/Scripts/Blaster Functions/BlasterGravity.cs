@@ -2,46 +2,70 @@ using UnityEngine;
 
 public class BlasterGravity : MonoBehaviour
 {
-    [SerializeField] private float raycastDistance = 10f;
-    [SerializeField] private LayerMask collisionLayers;
+    [Header("References")]
+    public Camera playerCamera;
+    public Transform holdPoint;
 
-    void Update()
+    [Header("Pickup Settings")]
+    public float raycastRange = 10f;
+    public float moveForce = 150f;
+    public LayerMask pickupLayer;
+
+    private Rigidbody heldObject;
+    private float holdDistance;
+
+    private void Update()
     {
-        RaycastHit hit;
-        Vector3 direction = transform.TransformDirection(Vector3.forward);
-
         if (Input.GetMouseButtonDown(0))
         {
-            if (Physics.Raycast(transform.position, direction, out hit, raycastDistance, collisionLayers))
+            if (heldObject == null)
             {
-                if (hit.rigidbody != null)
-                {
-                    Debug.DrawRay(transform.position, direction * hit.distance, Color.yellow);
-
-                    Rigidbody rb = hit.rigidbody;
-
-                    if (!rb.useGravity)
-                    {
-                        rb.useGravity = true;
-                        Debug.Log("To the Ground with ye!");
-                    }
-                    else
-                    {
-                        rb.useGravity = false;
-                        Debug.Log("To the Sky with ye!");
-                    }
-                }
-                else
-                {
-                    Debug.DrawRay(transform.position, direction * raycastDistance, Color.red);
-                    Debug.Log("Immovable Object!");
-                }
+                TryPickUp();
             }
             else
             {
-                Debug.DrawRay(transform.position, direction * raycastDistance, Color.red);
-                Debug.Log("Nothing here!");
+                DropObject();
             }
         }
+
+        if (heldObject != null)
+        {
+            MoveObject();
+        }
+    }
+
+    private void TryPickUp()
+    {
+        RaycastHit hit;
+
+        if (Physics.Raycast(playerCamera.transform.position, playerCamera.transform.forward, out hit, raycastRange, pickupLayer))
+        {
+            Rigidbody rb = hit.rigidbody;
+
+            if (rb != null)
+            {
+                heldObject = rb;
+                heldObject.useGravity = false;
+                heldObject.linearDamping = 10;
+
+                holdDistance = Vector3.Distance(playerCamera.transform.position, hit.point);
+            }
+        }
+    }
+
+    private void MoveObject()
+    {
+        Vector3 targetPosition = playerCamera.transform.position + playerCamera.transform.forward * holdDistance;
+
+        Vector3 direction = targetPosition - heldObject.position;
+
+        heldObject.linearVelocity = direction * moveForce * Time.deltaTime;
+    }
+
+    private void DropObject()
+    {
+        heldObject.useGravity = true;
+        heldObject.linearDamping = 0;
+        heldObject = null;
     }
 }
