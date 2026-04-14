@@ -3,13 +3,15 @@ using UnityEngine;
 public class SpawnManager : MonoBehaviour
 {
     public Vector3 currentSpawn;
-    public Transform defaultSpawn;
-    public static Transform currentCheckpoint;
-    public GameObject player;
-
+    private Transform defaultSpawn;
+    private GameObject player;
 
     void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player");
+        GameObject defaultSpawnObject = GameObject.Find("DefaultSpawn");
+        defaultSpawn = defaultSpawnObject.transform;
+        currentSpawn = defaultSpawn.position;
         LoadCheckpoint();
     }
 
@@ -28,16 +30,14 @@ public class SpawnManager : MonoBehaviour
 
     void LoadCheckpoint()
     {
-        Vector3 tempSpawn = new Vector3(PlayerPrefs.GetFloat("xPos"), PlayerPrefs.GetFloat("yPos"), PlayerPrefs.GetFloat("zPos"));
-        player.transform.position = tempSpawn;
-        
+        player.SetActive(false);
+        player.transform.position = currentSpawn;
+        player.SetActive(true);
+        print("loaded check point @ " +  currentSpawn);
     }
 
     void ResetCheckpoint()
     {
-        PlayerPrefs.SetFloat("xPos", defaultSpawn.position.x);
-        PlayerPrefs.SetFloat("yPos", defaultSpawn.position.y);
-        PlayerPrefs.SetFloat("zPos", defaultSpawn.position.z);
-
+        currentSpawn = defaultSpawn.position;
     }
 }
