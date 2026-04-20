@@ -42,10 +42,10 @@ public class EnemyHealth : MonoBehaviour
 
     void OnCollisionEnter(Collision other)
     {
-       // if (other.gameObject.CompareTag("bullet"))
-       // {
-        //    enemyHealth -= 10;
-        //}
+        if (other.gameObject.CompareTag("bullet"))
+        {
+            enemyHealth -= 10;
+        }
        if(other.gameObject.CompareTag("Player"))
         {
 
@@ -57,15 +57,6 @@ public class EnemyHealth : MonoBehaviour
             }
             
             
-        }
-    }
-
-        void OnCollisionExit (Collision other)
-    {
-
-       if(other.gameObject.CompareTag("Player"))
-        {
-            Health.playerHealth +=10; 
         }
     }
 
@@ -82,5 +73,7 @@ public class EnemyHealth : MonoBehaviour
     //     item = true;
 
     // }
-
+    IEnumerator Damage (){
+        yield return new WaitForSeconds(3.0f);
+    }
 }
