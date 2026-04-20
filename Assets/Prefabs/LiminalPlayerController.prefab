@@ -576,9 +576,10 @@ GameObject:
   - component: {fileID: 367196271770323786}
   - component: {fileID: 5832767160580701438}
   - component: {fileID: 502361480967407892}
+  - component: {fileID: 4104257389998723348}
   m_Layer: 0
   m_Name: LiminalPlayerController
-  m_TagString: Untagged
+  m_TagString: Target
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -642,6 +643,8 @@ MonoBehaviour:
   sprintAcceleration: 5
   jumpHeight: 0.4
   jumpCooldown: 0
+  apexGravityMultiplier: 0.3
+  coyoteTime: 0.15
   lookSensitivity: 1
   jumpKey: 32
   sprintKey: 304
@@ -658,3 +661,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BlasterSwitch
   playerCamera: {fileID: 3006034097951754939}
+--- !u!114 &4104257389998723348
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7751882087704643534}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04268680fc7fbaf4bb90dd3bd5555131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerHealth
+  HealthNumbers: {fileID: 0}
+  healthSlider: {fileID: 0}
+  playerHealth: 100
+  playerMaxHealth: 100
+  damageTaken: 0
+  touchingEnemy: 0
+  canCo: 0
