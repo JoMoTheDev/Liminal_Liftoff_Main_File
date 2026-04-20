@@ -3,7 +3,8 @@ using UnityEngine;
 public class BlasterShoot : MonoBehaviour
 {
     public float raycastDistance = 10f;
-    public LayerMask enemyLayers;
+    public string enemyTag;
+    public LayerMask objectShootLayer;
     [SerializeField] private int blasterDamage = 50;
 
     private void Update()
@@ -13,7 +14,7 @@ public class BlasterShoot : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0))
         {
-            if (Physics.Raycast(transform.position, direction, out hit, raycastDistance, enemyLayers))
+            if (Physics.Raycast(transform.position, direction, out hit, raycastDistance, objectShootLayer))
             {
                 Debug.DrawRay(transform.position, direction * hit.distance, Color.yellow);
                 Debug.Log("Target took " + blasterDamage + " damage!" );

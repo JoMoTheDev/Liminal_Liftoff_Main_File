@@ -9673,7 +9673,7 @@ GameObject:
   - component: {fileID: 1603995031}
   - component: {fileID: 1603995030}
   - component: {fileID: 1603995036}
-  m_Layer: 6
+  m_Layer: 9
   m_Name: RaycestTest (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9736,7 +9736,6 @@ MeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 976a44c28dfe8b5498cea7d0116020d5, type: 2}
-  - {fileID: 2100000, guid: 6f3a8c14bbf4e2643b70118d9c1eef9c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -10058,7 +10057,7 @@ GameObject:
   - component: {fileID: 1679345649}
   - component: {fileID: 1679345648}
   - component: {fileID: 1679345647}
-  m_Layer: 6
+  m_Layer: 10
   m_Name: RaycestTest (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10148,7 +10147,6 @@ MeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 976a44c28dfe8b5498cea7d0116020d5, type: 2}
-  - {fileID: 2100000, guid: c4e2c7a706f2e22438f1f65b4f1b3ade, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -10987,7 +10985,7 @@ GameObject:
   - component: {fileID: 2068223995}
   - component: {fileID: 2068223994}
   - component: {fileID: 2068223993}
-  m_Layer: 9
+  m_Layer: 11
   m_Name: RaycestTest (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11372,6 +11370,10 @@ PrefabInstance:
     - target: {fileID: 1192999528509550988, guid: fadd5392a1537dc4f97386099855faf4, type: 3}
       propertyPath: moveForce
       value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 1192999528509550988, guid: fadd5392a1537dc4f97386099855faf4, type: 3}
+      propertyPath: pickupLayer.m_Bits
+      value: 512
       objectReference: {fileID: 0}
     - target: {fileID: 5832767160580701438, guid: fadd5392a1537dc4f97386099855faf4, type: 3}
       propertyPath: apexGravityMultiplier
