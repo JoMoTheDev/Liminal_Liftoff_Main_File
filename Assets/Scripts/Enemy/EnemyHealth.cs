@@ -14,6 +14,9 @@ public class EnemyHealth : MonoBehaviour
     public GameObject weapon;
     public GameObject gun;
 
+    public int damage;
+    public int totalDamage;
+
     public bool item = false;
 
     void Start()
@@ -23,12 +26,12 @@ public class EnemyHealth : MonoBehaviour
 
     void Update()
     {
-        if(enemyHealth <= 0)
-        {
-            Destroy(this.gameObject);
-            DropLoot();
-            Debug.Log("text");
-        }
+        // if(enemyHealth <= 0)
+        // {
+        //     Destroy(this.gameObject);
+        //     DropLoot();
+        //     Debug.Log("text");
+        // }
 
     }
 
@@ -39,32 +42,45 @@ public class EnemyHealth : MonoBehaviour
 
     void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.CompareTag("bullet"))
-        {
-            enemyHealth -= 10;
-        }
+       // if (other.gameObject.CompareTag("bullet"))
+       // {
+        //    enemyHealth -= 10;
+        //}
        if(other.gameObject.CompareTag("Player"))
         {
-            Health.playerHealth -= 5;
-            if (Health.playerHealth <= 0)
+
+            if (Health.playerHealth <= 1)
             {
-                SceneManager.LoadScene(0);
+               damage = 0;
+               Debug.Log("Dead player");
+               // SceneManager.LoadScene(0);
             }
+            
+            
         }
     }
 
-
-    void DropLoot()
+        void OnCollisionExit (Collision other)
     {
 
-        GameObject instance = Instantiate(weapon, enemyPos.position, Quaternion.identity);
-        gun = instance.GetComponent<GameObject>();
-        if (Input.GetKeyDown("e"))
+       if(other.gameObject.CompareTag("Player"))
         {
-            Destroy(instance);
+            Health.playerHealth +=10; 
         }
-        item = true;
-
     }
+
+
+    // void DropLoot()
+    // {
+
+    //     GameObject instance = Instantiate(weapon, enemyPos.position, Quaternion.identity);
+    //     gun = instance.GetComponent<GameObject>();
+    //     if (Input.GetKeyDown("e"))
+    //     {
+    //         Destroy(instance);
+    //     }
+    //     item = true;
+
+    // }
 
 }

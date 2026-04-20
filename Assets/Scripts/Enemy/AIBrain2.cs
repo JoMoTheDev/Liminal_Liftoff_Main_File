@@ -35,10 +35,10 @@ public class AIBrain2 : MonoBehaviour
         {
             if (!speedChanged)
             {
-                enemySpeed = enemySpeed * 10;
+                enemySpeed = enemySpeed * 2;
                 speedChanged = true;
             }
-            Destroy(gameObject, 1f);
+            //Destroy(gameObject, 8f);
         }
 
     }

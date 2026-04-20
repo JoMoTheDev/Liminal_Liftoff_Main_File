@@ -19,6 +19,8 @@ public class PlayerHealth : MonoBehaviour
     public bool touchingEnemy = false;
     public bool canCo = false;
 
+    private EnemyHealth enemy;
+
     private void Start()
     {
         playerHealth = playerMaxHealth;
@@ -33,22 +35,24 @@ public class PlayerHealth : MonoBehaviour
     void CheckPLayerHealth()
     {
         HealthNumbers.text = playerHealth.ToString();
-        if (playerHealth <= 0)
-        {
-            SceneManager.LoadScene(0);
-        }
+       // if (playerHealth <= 0)
+        //{
+        //    SceneManager.LoadScene(0);
+       // }
     }
 
     void OnCollisionStay(Collision other)
     {
+        
         if (other.gameObject.CompareTag("enemy"))
         {
+            
             Debug.Log("Enemy is Touching Player");
             touchingEnemy = true;  
             canCo = true;
-            if (playerHealth > 0)
+            if (playerHealth > 1)
             {
-                playerHealth -=5;
+                playerHealth -= 1;
             }
         }
 
@@ -61,6 +65,7 @@ public class PlayerHealth : MonoBehaviour
             touchingEnemy = false;
             canCo = false;
         }
+        playerHealth +=1; 
 
     }
 }
