@@ -4560,7 +4560,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c22777d6e868e4f2fb421913386b154e, type: 2}
+  - {fileID: 2100000, guid: 976a44c28dfe8b5498cea7d0116020d5, type: 2}
+  - {fileID: 2100000, guid: e7e324627fd7d8d4698606adb2b6a24e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -9269,6 +9270,38 @@ Mesh:
       - serializedVersion: 1
         m_IndexStart: 0
         m_IndexCount: 0
+--- !u!1 &1544959544
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1544959545}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1544959545
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1544959544}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -6, y: 2, z: 16}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1603995035}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1563960347
 GameObject:
   m_ObjectHideFlags: 0
@@ -9640,7 +9673,7 @@ GameObject:
   - component: {fileID: 1603995031}
   - component: {fileID: 1603995030}
   - component: {fileID: 1603995036}
-  m_Layer: 6
+  m_Layer: 9
   m_Name: RaycestTest (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9702,7 +9735,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c22777d6e868e4f2fb421913386b154e, type: 2}
+  - {fileID: 2100000, guid: 976a44c28dfe8b5498cea7d0116020d5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -9975,12 +10008,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1603995028}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6, y: 2, z: 16}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1544959545}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &1603995036
 Rigidbody:
@@ -10024,7 +10057,7 @@ GameObject:
   - component: {fileID: 1679345649}
   - component: {fileID: 1679345648}
   - component: {fileID: 1679345647}
-  m_Layer: 6
+  m_Layer: 10
   m_Name: RaycestTest (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10113,7 +10146,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c22777d6e868e4f2fb421913386b154e, type: 2}
+  - {fileID: 2100000, guid: 976a44c28dfe8b5498cea7d0116020d5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -10952,7 +10985,7 @@ GameObject:
   - component: {fileID: 2068223995}
   - component: {fileID: 2068223994}
   - component: {fileID: 2068223993}
-  m_Layer: 6
+  m_Layer: 11
   m_Name: RaycestTest (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11041,7 +11074,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c22777d6e868e4f2fb421913386b154e, type: 2}
+  - {fileID: 2100000, guid: 976a44c28dfe8b5498cea7d0116020d5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -11338,6 +11371,14 @@ PrefabInstance:
       propertyPath: moveForce
       value: 500
       objectReference: {fileID: 0}
+    - target: {fileID: 1192999528509550988, guid: fadd5392a1537dc4f97386099855faf4, type: 3}
+      propertyPath: pickupLayer.m_Bits
+      value: 512
+      objectReference: {fileID: 0}
+    - target: {fileID: 5832767160580701438, guid: fadd5392a1537dc4f97386099855faf4, type: 3}
+      propertyPath: apexGravityMultiplier
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 7751882087704643534, guid: fadd5392a1537dc4f97386099855faf4, type: 3}
       propertyPath: m_Name
       value: LiminalPlayerController
@@ -11400,7 +11441,7 @@ SceneRoots:
   - {fileID: 707569884}
   - {fileID: 732853704}
   - {fileID: 819570182}
-  - {fileID: 1603995035}
+  - {fileID: 1544959545}
   - {fileID: 1679345653}
   - {fileID: 2068223999}
   - {fileID: 208886383}

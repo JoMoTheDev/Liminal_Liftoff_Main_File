@@ -37,6 +37,13 @@ public class PlayerController : MonoBehaviour
     [Range(0f, 30f), Tooltip("The time the player must wait to jump again.")]
     public float jumpCooldown = 1f;
 
+    [Range(0f, 1f), Tooltip("The gravity multiplier when the player reaches the height of the jump.")]
+    public float apexGravityMultiplier = 0.3f;
+
+    [Range(0f, 0.5f), Tooltip("The amount of extra time the player can jump after leaving the ground.")]
+    public float coyoteTime = 0.15f;
+    private float coyoteTimer;
+
     [Space]
 
     [Range(0f, 100f), Tooltip("Controls the player's look sensitivity.")]
@@ -105,18 +112,34 @@ public class PlayerController : MonoBehaviour
         if(controller.isGrounded)
         {
             verticalVelocity = -1f;
-
-            if(Input.GetKey(jumpKey) && canJump){
-                //calculates velocity needed to reach desired jump height
-                verticalVelocity = Mathf.Sqrt(jumpHeight * gravity * 2);
-                canJump = false;
-
-                StartCoroutine(JumpDelay());
-            }
+            coyoteTimer = coyoteTime;
         }
         else
         {
-            verticalVelocity -= gravity * Time.deltaTime;
+            coyoteTimer -= Time.deltaTime;
+        }
+
+        if (Input.GetKey(jumpKey) && canJump && coyoteTimer > 0f)
+        {
+            //calculates velocity needed to reach desired jump height
+            verticalVelocity = Mathf.Sqrt(jumpHeight * gravity * 2);
+            canJump = false;
+            coyoteTimer = 0f; //Completely consume Coyote Time after a single jump
+
+            StartCoroutine(JumpDelay());
+        }
+
+        else
+        {
+            //Lower the gravity to extend the time the player spends at the apex of their jump
+            if (Mathf.Abs(verticalVelocity) < jumpHeight) //Compare velocity to the jump height
+            {
+                verticalVelocity -= (gravity * apexGravityMultiplier) * Time.deltaTime;
+            }
+            else
+            {
+                verticalVelocity -= gravity * Time.deltaTime;
+            }
         }
         return verticalVelocity;
     }
