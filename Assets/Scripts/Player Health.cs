@@ -28,8 +28,11 @@ public class PlayerHealth : MonoBehaviour
 
     private void Update()
     {
-        healthSlider.value = playerHealth;
-        CheckPLayerHealth();
+        if (healthSlider != null)
+        {
+            healthSlider.value = playerHealth;
+            CheckPLayerHealth();
+        }
     }
 
     void CheckPLayerHealth()
