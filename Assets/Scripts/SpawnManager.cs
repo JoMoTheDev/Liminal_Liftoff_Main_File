@@ -6,12 +6,20 @@ public class SpawnManager : MonoBehaviour
     private Transform defaultSpawn;
     private GameObject player;
 
-    void Start()
+    void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player");
+        if (player == null)
+        {
+            player = GameObject.FindGameObjectWithTag("Target");
+        }
         GameObject defaultSpawnObject = GameObject.Find("DefaultSpawn");
         defaultSpawn = defaultSpawnObject.transform;
         currentSpawn = defaultSpawn.position;
+    }
+
+    void Start()
+    {
         LoadCheckpoint();
     }
 
@@ -32,6 +40,7 @@ public class SpawnManager : MonoBehaviour
     {
         player.SetActive(false);
         player.transform.position = currentSpawn;
+        //player.transform.rotation = 
         player.SetActive(true);
         print("loaded check point @ " +  currentSpawn);
     }
