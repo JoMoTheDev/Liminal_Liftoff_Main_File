@@ -26,7 +26,7 @@ public class AIBrain2 : MonoBehaviour
 
         if (dist <= prox)
         {
-            Debug.Log("test");
+            //Debug.Log("test");
             transform.LookAt(target);
             rb.AddForce(transform.forward * enemySpeed);
         }
