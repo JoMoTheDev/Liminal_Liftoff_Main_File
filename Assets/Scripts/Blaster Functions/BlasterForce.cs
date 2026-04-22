@@ -21,7 +21,7 @@ public class BlasterForce : MonoBehaviour
                     Debug.DrawRay(transform.position, direction * hit.distance, Color.yellow);
 
                     Rigidbody rb = hit.rigidbody;
-                    rb.AddForce(direction * launchForce * Time.deltaTime, ForceMode.Impulse);
+                    rb.AddForce(direction * launchForce, ForceMode.Impulse);
                     Debug.Log("Begone!");
                 }
                 else
