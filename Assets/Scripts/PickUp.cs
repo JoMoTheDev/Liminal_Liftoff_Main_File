@@ -8,7 +8,7 @@ public class PickUp : MonoBehaviour
 
     public int collectionMaxAmount;
 
-    private int collectionAmount;
+    [SerializeField] private int collectionAmount = 0;
 
     private void Update()
     {
@@ -19,8 +19,25 @@ public class PickUp : MonoBehaviour
         {
             if (Physics.Raycast(transform.position, direction, out hit, raycastDistance, interactLayer))
             {
-                Debug.DrawRay(transform.position, direction * hit.distance, Color.yellow);
-                Debug.Log("That thing is " + hit.distance + " meters away!");
+                // if (Note - likely checking for a tag)
+                // {
+                //      Check ID of note, or at least that's the best method I can think of
+                //      Display relevant UI element
+                // }
+                collectionAmount++;
+                Destroy(hit.collider.gameObject);
+            }
+        }
+
+        if (collectionAmount == collectionMaxAmount)
+        {
+            if (levelDoor.GetComponent<Animation>() != null)
+            {
+                levelDoor.GetComponent<Animation>().enabled = true;
+            }
+            else
+            {
+                levelDoor.SetActive(false);
             }
         }
     }
