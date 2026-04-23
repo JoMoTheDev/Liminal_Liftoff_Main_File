@@ -11,7 +11,7 @@ public class CheckPoint : MonoBehaviour
     {
         if (Other.gameObject.CompareTag("Player"))
         {
-            CMRef.currentSpawn = transform.position;
+            CMRef.currentSpawn = transform;
             print("set checkpoint @ " + transform.position);
         }
     }
