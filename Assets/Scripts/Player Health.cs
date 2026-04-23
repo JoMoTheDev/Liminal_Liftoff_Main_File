@@ -19,22 +19,32 @@ public class PlayerHealth : MonoBehaviour
     public bool touchingEnemy = false;
     public bool canCo = false;
 
+    private bool canTakeDamage = true;
+
     private EnemyHealth enemy;
 
     private void Start()
     {
         playerHealth = playerMaxHealth;
+        healthSlider = GameObject.Find("HealthBar").GetComponent<Slider>();
+        if (healthSlider == null)
+        {
+            print("no health slider");
+        }
     }
 
     private void Update()
     {
-        healthSlider.value = playerHealth;
-        CheckPLayerHealth();
+        if ( healthSlider != null)
+        {
+            healthSlider.value = playerHealth;
+            CheckPLayerHealth();
+        }
     }
 
     void CheckPLayerHealth()
     {
-        HealthNumbers.text = playerHealth.ToString();
+       //HealthNumbers.text = playerHealth.ToString();
        // if (playerHealth <= 0)
         //{
         //    SceneManager.LoadScene(0);
@@ -44,15 +54,17 @@ public class PlayerHealth : MonoBehaviour
     void OnCollisionStay(Collision other)
     {
         
-        if (other.gameObject.CompareTag("enemy"))
+        if (other.gameObject.CompareTag("enemy") && canTakeDamage)
         {
             
-            Debug.Log("Enemy is Touching Player");
+            //Debug.Log("Enemy is Touching Player");
             touchingEnemy = true;  
             canCo = true;
             if (playerHealth > 1)
             {
                 playerHealth -= 1;
+                StartCoroutine(DamageDelay());
+                print(playerHealth);
             }
         }
 
@@ -65,7 +77,14 @@ public class PlayerHealth : MonoBehaviour
             touchingEnemy = false;
             canCo = false;
         }
-        playerHealth +=1; 
+        //playerHealth +=1; 
 
+    }
+
+    IEnumerator DamageDelay()
+    {
+        canTakeDamage = false;
+        yield return new WaitForSeconds(0.1f);
+        canTakeDamage = true;
     }
 }

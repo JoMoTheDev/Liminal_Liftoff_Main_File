@@ -40,7 +40,7 @@ public class EnemyHealth : MonoBehaviour
         enemyHealth -= damage;
     }
 
-    void OnCollisionEnter(Collision other)
+    /*void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.CompareTag("bullet"))
         {
@@ -57,8 +57,8 @@ public class EnemyHealth : MonoBehaviour
             }
             
             
-        }
-    }
+        }   
+    }    */
 
 
     // void DropLoot()

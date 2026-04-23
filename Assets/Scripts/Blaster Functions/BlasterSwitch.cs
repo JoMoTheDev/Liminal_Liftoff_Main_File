@@ -6,12 +6,16 @@ public class BlasterSwitch : MonoBehaviour
 
     private MonoBehaviour[] blasterModes;
 
+    public GameObject gravLight;
+    public GameObject forceLight;
+    public GameObject shootLight;
+
     private void Start()
     {
         blasterModes = new MonoBehaviour[]
         {
-            playerCamera.GetComponent<BlasterGravity>(),
             playerCamera.GetComponent<BlasterLight>(),
+            playerCamera.GetComponent<BlasterGravity>(),
             playerCamera.GetComponent<BlasterForce>(),
             playerCamera.GetComponent<BlasterShoot>()
         };
@@ -25,9 +29,33 @@ public class BlasterSwitch : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha1)) ActivateModes(0);
-        if (Input.GetKeyDown(KeyCode.Alpha2)) ActivateModes(1);
-        if (Input.GetKeyDown(KeyCode.Alpha3)) ActivateModes(2);
-        if (Input.GetKeyDown(KeyCode.Alpha4)) ActivateModes(3);
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            ActivateModes(0);
+            gravLight.SetActive(false);
+            forceLight.SetActive(false);
+            shootLight.SetActive(false);
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            ActivateModes(1);
+            gravLight.SetActive(true);
+            forceLight.SetActive(false);
+            shootLight.SetActive(false);
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            ActivateModes(2);
+            gravLight.SetActive(false);
+            forceLight.SetActive(true);
+            shootLight.SetActive(false);
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha4))
+        {
+            ActivateModes(3);
+            gravLight.SetActive(false);
+            forceLight.SetActive(false);
+            shootLight.SetActive(true);
+        }
     }
 }
