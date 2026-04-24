@@ -37,7 +37,7 @@ public class PickUp : MonoBehaviour
             }
             else
             {
-                levelDoor.SetActive(false);
+                levelDoor.GetComponent<Collider>().isTrigger = true;
             }
         }
     }
