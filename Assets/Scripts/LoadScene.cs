@@ -4,18 +4,24 @@ using UnityEngine.SceneManagement;
 public class LoadScene : MonoBehaviour
 {
     public int sceneToLoad;
-    public bool isPassive;
 
     public void SceneLoad()
     {
+        Debug.Log("Load!");
         SceneManager.LoadScene(sceneToLoad);
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if (isPassive && collision.gameObject.CompareTag("Target") || collision.gameObject.CompareTag("Player"))
+        if (other.gameObject.CompareTag("Door") && other.gameObject.TryGetComponent(out DoorID doorID))
         {
-            SceneManager.LoadScene(sceneToLoad);
+            Debug.Log("Here is a door!");
+            if (doorID != null)
+            {
+                Debug.Log("The next scene will be " + doorID.targetScene);
+                sceneToLoad = doorID.targetScene;
+                SceneLoad();
+            }
         }
     }
 }
