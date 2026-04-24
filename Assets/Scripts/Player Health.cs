@@ -19,56 +19,32 @@ public class PlayerHealth : MonoBehaviour
     public bool touchingEnemy = false;
     public bool canCo = false;
 
-    private EnemyHealth enemy;
+    private bool canTakeDamage = true;
 
     private void Start()
     {
         playerHealth = playerMaxHealth;
-    }
-
-    private void Update()
-    {
-        if (healthSlider != null)
+        healthSlider = GameObject.Find("HealthBar").GetComponent<Slider>();
+        if (healthSlider == null)
         {
-            healthSlider.value = playerHealth;
-            CheckPLayerHealth();
+            print("no health slider");
         }
     }
 
-    void CheckPLayerHealth()
+    public void TakeDamage(int damage)
     {
-        HealthNumbers.text = playerHealth.ToString();
-       // if (playerHealth <= 0)
-        //{
-        //    SceneManager.LoadScene(0);
-       // }
+        playerHealth -= damage;
+        UpdateHealthBar();
+        if (playerHealth <= 0)
+        {
+            print("you dead");
+            //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            TakeDamage(-playerMaxHealth);
+        }
     }
 
-    void OnCollisionStay(Collision other)
+    void UpdateHealthBar()
     {
-        
-        if (other.gameObject.CompareTag("enemy"))
-        {
-            
-            Debug.Log("Enemy is Touching Player");
-            touchingEnemy = true;  
-            canCo = true;
-            if (playerHealth > 1)
-            {
-                playerHealth -= 1;
-            }
-        }
-
-    }
-
-    void OnCollisionExit(Collision other)
-    {
-        if (other.gameObject.CompareTag("enemy"))
-        {
-            touchingEnemy = false;
-            canCo = false;
-        }
-        playerHealth +=1; 
-
+        healthSlider.value = playerHealth;
     }
 }
