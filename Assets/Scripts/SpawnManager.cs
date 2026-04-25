@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class SpawnManager : MonoBehaviour
 {
-    public Vector3 currentSpawn;
+    public Transform currentSpawn;
     private Transform defaultSpawn;
     private GameObject player;
 
@@ -15,7 +15,7 @@ public class SpawnManager : MonoBehaviour
         }
         GameObject defaultSpawnObject = GameObject.Find("DefaultSpawn");
         defaultSpawn = defaultSpawnObject.transform;
-        currentSpawn = defaultSpawn.position;
+        currentSpawn = defaultSpawn;
     }
 
     void Start()
@@ -39,7 +39,7 @@ public class SpawnManager : MonoBehaviour
     void LoadCheckpoint()
     {
         player.SetActive(false);
-        player.transform.position = currentSpawn;
+        player.transform.position = currentSpawn.position;
         //player.transform.rotation = 
         player.SetActive(true);
         print("loaded check point @ " +  currentSpawn);
@@ -47,6 +47,6 @@ public class SpawnManager : MonoBehaviour
 
     void ResetCheckpoint()
     {
-        currentSpawn = defaultSpawn.position;
+        currentSpawn = defaultSpawn;
     }
 }

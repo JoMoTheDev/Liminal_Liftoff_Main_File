@@ -22,7 +22,7 @@ public class KeyManager : MonoBehaviour
             interactedObject.GetComponent<LoadScene>().SceneLoad();
         }
 
-        if (interactedObject.CompareTag(doorTag) && keyAmount >= 1)
+        if (interactedObject.CompareTag(doorTag) /*&& keyAmount >= 1*/)
         {
             keyAmount -= 1;
             Destroy(interactedObject);
