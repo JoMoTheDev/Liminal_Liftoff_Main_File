@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class EnemyAttack : MonoBehaviour
 {
+    public Animator animator;
+
     public int attackDamage = 10;
     public float attackRange = 2.5f;
     public float attackRate = 2f; // Attack every X seconds
@@ -31,6 +33,8 @@ public class EnemyAttack : MonoBehaviour
         RaycastHit hit;
 
         Debug.DrawRay(transform.position, direction * attackRange, Color.blue, 1.0f);
+
+        animator.Play("Attack_Gumbo");
 
         if (Physics.Raycast(transform.position, direction, out hit, attackRange))
         {
