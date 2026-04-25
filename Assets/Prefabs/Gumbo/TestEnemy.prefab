@@ -451,6 +451,7 @@ GameObject:
   - component: {fileID: 1276327422861246760}
   - component: {fileID: 8437726759463229366}
   - component: {fileID: 5983340401382167828}
+  - component: {fileID: 952566099671312360}
   m_Layer: 0
   m_Name: TestEnemy
   m_TagString: enemy
@@ -501,10 +502,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.7827065
+  m_Radius: 0.693006
   m_Height: 5.1777234
   m_Direction: 1
-  m_Center: {x: 0, y: 1.4432633, z: 0.2827065}
+  m_Center: {x: 0, y: 1.4432633, z: 0}
 --- !u!195 &2012388785313160785
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -552,6 +553,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9355c336b48f3ee4a9c1187a1835ea1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyAttack
+  animator: {fileID: 952566099671312360}
   attackDamage: 10
   attackRange: 5
   attackRate: 1
@@ -567,11 +569,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49b0529364ed95f4c970b769f3f6da5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyNavAI
+  animator: {fileID: 952566099671312360}
+  initialAnimation: Breath_Gumbo
+  entranceAnimation: 
+  shouldWander: 0
   agroRange: 20
   wanderRadius: 5
   wanderInterval: 5
   defaultSpeed: 4
   distanceFromPlayer: 2.5
+  entranceLength: 5
+--- !u!95 &952566099671312360
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1546052647264980212}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: c71804718acda9d42a7d1ae10d54d313, type: 2}
+  m_Controller: {fileID: 9100000, guid: 520b99e0743be1140a7ec8d92456e7db, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1704887189237482778
 GameObject:
   m_ObjectHideFlags: 0

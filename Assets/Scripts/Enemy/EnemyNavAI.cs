@@ -1,3 +1,4 @@
+using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
@@ -5,20 +6,27 @@ using UnityEngine.UIElements;
 
 public class EnemyNavAI : MonoBehaviour
 {
+    public Animator animator;
+
     private Transform target;
     private NavMeshAgent agent;
     private Vector3 wanderTarget;
-    private Vector3 origin;
 
-    private float targetDistance;
+    public string initialAnimation = "Breath_Gumbo";
+    public string entranceAnimation;
 
+    public bool shouldWander;
     private bool wasChasing = false;
+    private bool isWalking;
+    private bool entranceHasPlayed;
 
     public float agroRange;
     public float wanderRadius = 15f;
     public float wanderInterval = 5f;
     public float defaultSpeed = 2.5f;
     public float distanceFromPlayer;
+    public float entranceLength = 5f;
+    private float targetDistance;
 
     private float wanderTimer;
     private float curStoppingDistance;
@@ -27,8 +35,9 @@ public class EnemyNavAI : MonoBehaviour
     {
         agent = GetComponent<NavMeshAgent>();
         target = FindFirstObjectByType<PlayerController>().GetComponent<Transform>();
-        origin = transform.position;
         curStoppingDistance = agent.stoppingDistance;
+
+        animator.Play(initialAnimation);
 
         wanderTimer = wanderInterval;
         agent.speed = defaultSpeed;
@@ -44,9 +53,21 @@ public class EnemyNavAI : MonoBehaviour
         targetDistance = Vector3.Distance(transform.position, target.position);
         if (targetDistance <= agroRange)
         {
-            wasChasing = true;
-            agent.stoppingDistance = distanceFromPlayer;
-            ChasePlayer();
+            if (entranceAnimation != null && !entranceHasPlayed)
+            {
+                StartCoroutine(EntranceAnimation());
+            }
+            else
+            {
+                wasChasing = true;
+                agent.stoppingDistance = distanceFromPlayer;
+                ChasePlayer();
+                if (!isWalking)
+                {
+                    isWalking = true;
+                    animator.Play("Walk_Gumbo");
+                }
+            }
         }
 
         else
@@ -56,9 +77,14 @@ public class EnemyNavAI : MonoBehaviour
                 wasChasing = false;
                 agent.stoppingDistance = curStoppingDistance;
                 PickNewWanderTarget();
+                isWalking = false;
+                animator.Play("Breath_Gumbo");
             }
 
-            Wander();
+            if (shouldWander)
+            {
+                Wander();
+            }
         }
     }
 
@@ -90,6 +116,13 @@ public class EnemyNavAI : MonoBehaviour
         {
             PickNewWanderTarget();
         }
+    }
+
+    IEnumerator EntranceAnimation()
+    {
+        animator.Play(entranceAnimation);
+        yield return new WaitForSeconds(entranceLength);
+        entranceHasPlayed = true;
     }
 
     void OnDrawGizmos()
