@@ -25,7 +25,7 @@ public class PickUp : MonoBehaviour
                 //      Display relevant UI element
                 // }
                 collectionAmount++;
-                Destroy(hit.collider.gameObject);
+                hit.collider.gameObject.SetActive(false);
             }
         }
 

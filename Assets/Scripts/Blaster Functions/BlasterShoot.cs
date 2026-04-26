@@ -21,7 +21,12 @@ public class BlasterShoot : MonoBehaviour
 
                 if (hit.collider.gameObject.CompareTag("Note"))
                 {
-                    
+                    Rigidbody rb = hit.rigidbody;
+
+                    hit.collider.gameObject.layer = LayerMask.NameToLayer("InteractLayer");
+
+                    rb.useGravity = true;
+                    rb.constraints = RigidbodyConstraints.None;
                 }
             }
             else

@@ -3,64 +3,58 @@ using UnityEngine;
 
 public class TutorialTriggers : MonoBehaviour
 {
-    [SerializeField] private GameObject blasterItem;
-    [SerializeField] private GameObject blasterVisual;
-    [SerializeField] private GameObject noteOne;
-    //[SerializeField] private GameObject mapItem;
-    //[SerializeField] private GameObject stickyNote;
-    [SerializeField] private GameObject shipWindow;
-    [SerializeField] private GameObject shipFins;
-    [SerializeField] private GameObject playerLight;
-    [SerializeField] private GameObject noteTwo;
+    public GameObject blasterVisual;
+    //public GameObject noteOne;
+    //public GameObject mapItem;
+    //public GameObject stickyNote;
+    //public GameObject shipWindow;
+    //public GameObject shipFins;
+    //public GameObject playerLight;
+    //public GameObject noteTwo;
 
-    [SerializeField] private Transform playerRef;
-    [SerializeField] private GameObject playerCamera;
+    //public Transform playerRef;
+    //public GameObject playerCamera;
 
-    private bool flashlightActivated = false;
+    //private bool flashlightActivated = false;
 
-    //private void Start()
+    //private void Update()
     //{
-    //    Play starting dialogue
+    //    if (blasterItem == null)
+    //    {
+    //        blasterVisual.SetActive(true);
+    //        //Play dialogue
+    //    }
+
+    //    //if (mapItem == null)
+    //    //{
+    //    //    Display map on heads up display
+    //    //}
+
+    //    //if (stickyNote == null)
+    //    //{
+    //    //    Play dialogue
+    //    //}
+
+    //    //if (shipWindow == null)
+    //    //{
+    //    //    Play dialogue
+    //    //}
+
+    //    //if (shipFins == null)
+    //    //{
+    //    //    Play dialogue
+    //    //}
+
+    //    //if (playerLight && flashlightActivated == false)
+    //    //{
+    //    //    Play dialogue
+    //    //}
     //}
 
-    private void Update()
+    public void BlasterDialogue()
     {
-        if (blasterItem == null)
-        {
-            blasterVisual.SetActive(true);
-            //Play dialogue
-        }
-
-        if (noteOne.GetComponent<Rigidbody>().useGravity)
-        {
-            noteOne.layer = LayerMask.NameToLayer("InteractLayer");
-            //Play dialogue
-        }
-
-        //if (mapItem == null)
-        //{
-        //    Display map on heads up display
-        //}
-
-        //if (stickyNote == null)
-        //{
-        //    Play dialogue
-        //}
-
-        //if (shipWindow == null)
-        //{
-        //    Play dialogue
-        //}
-
-        //if (shipFins == null)
-        //{
-        //    Play dialogue
-        //}
-
-        //if (playerLight && flashlightActivated == false)
-        //{
-        //    Play dialogue
-        //}
+        blasterVisual.SetActive(true);
+        //Play Dialogue after the player picks up the blaster
     }
 
     IEnumerator TalkingDelay(float delay)
