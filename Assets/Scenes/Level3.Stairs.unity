@@ -236,7 +236,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!65 &71077514
 BoxCollider:
@@ -659,7 +659,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!65 &255794094
 BoxCollider:
@@ -955,7 +955,7 @@ Transform:
   m_GameObject: {fileID: 304063769}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 7.5000005, y: 3.5, z: 5.5}
+  m_LocalPosition: {x: 7.5000005, y: 5.5, z: 5.5}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1481,7 +1481,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 124
   m_CollisionDetection: 0
 --- !u!65 &499730510
 BoxCollider:
@@ -2253,7 +2253,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!65 &700419769
 BoxCollider:
@@ -3074,6 +3074,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stair 4
       objectReference: {fileID: 0}
+    - target: {fileID: 9128435040710038124, guid: 660d3c88e1803af45a6013f5e4789411, type: 3}
+      propertyPath: m_Constraints
+      value: 124
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -3509,6 +3513,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: 4.4999995
       objectReference: {fileID: 0}
+    - target: {fileID: 1651726981811981194, guid: 660d3c88e1803af45a6013f5e4789411, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 2978423720777682116, guid: 660d3c88e1803af45a6013f5e4789411, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -3555,7 +3563,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9128435040710038124, guid: 660d3c88e1803af45a6013f5e4789411, type: 3}
       propertyPath: m_Constraints
-      value: 112
+      value: 118
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3633,7 +3641,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 124
   m_CollisionDetection: 0
 --- !u!65 &1348814494
 BoxCollider:
@@ -3855,7 +3863,7 @@ GameObject:
   - component: {fileID: 1407197092}
   - component: {fileID: 1407197091}
   - component: {fileID: 1407197090}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: DoubleBlock (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3899,10 +3907,10 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 120
   m_CollisionDetection: 0
 --- !u!65 &1407197091
 BoxCollider:
@@ -4107,7 +4115,7 @@ GameObject:
   - component: {fileID: 1591635484}
   - component: {fileID: 1591635483}
   - component: {fileID: 1591635482}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: DoubleBlock (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4154,7 +4162,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 118
   m_CollisionDetection: 0
 --- !u!65 &1591635483
 BoxCollider:
@@ -4739,8 +4747,12 @@ PrefabInstance:
       value: -7.5000005
       objectReference: {fileID: 0}
     - target: {fileID: 1645222942501628900, guid: 660d3c88e1803af45a6013f5e4789411, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 5.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1645222942501628900, guid: 660d3c88e1803af45a6013f5e4789411, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1
+      value: 5.5
       objectReference: {fileID: 0}
     - target: {fileID: 2978423720777682116, guid: 660d3c88e1803af45a6013f5e4789411, type: 3}
       propertyPath: m_LocalPosition.x

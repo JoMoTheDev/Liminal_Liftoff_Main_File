@@ -18,6 +18,11 @@ public class BlasterShoot : MonoBehaviour
             {
                 Debug.DrawRay(transform.position, direction * hit.distance, Color.yellow);
                 Debug.Log("Target took " + blasterDamage + " damage!" );
+
+                if (hit.collider.gameObject.CompareTag("Note"))
+                {
+                    
+                }
             }
             else
             {
