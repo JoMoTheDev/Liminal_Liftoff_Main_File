@@ -26150,6 +26150,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SceneLoader
       objectReference: {fileID: 0}
+    - target: {fileID: 5249112197633698919, guid: 1e70c5710742e12469bf42be8ff7a1d0, type: 3}
+      propertyPath: m_TagString
+      value: Door
+      objectReference: {fileID: 0}
     - target: {fileID: 6182113186832591248, guid: 1e70c5710742e12469bf42be8ff7a1d0, type: 3}
       propertyPath: m_LocalPosition.x
       value: -16.55762
@@ -26202,6 +26206,10 @@ PrefabInstance:
       propertyPath: m_Size.z
       value: 30
       objectReference: {fileID: 0}
+    - target: {fileID: 7062504763817268698, guid: 1e70c5710742e12469bf42be8ff7a1d0, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8658239380100591339, guid: 1e70c5710742e12469bf42be8ff7a1d0, type: 3}
       propertyPath: isPassive
       value: 1
@@ -26210,11 +26218,33 @@ PrefabInstance:
       propertyPath: sceneToLoad
       value: 3
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8658239380100591339, guid: 1e70c5710742e12469bf42be8ff7a1d0, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5249112197633698919, guid: 1e70c5710742e12469bf42be8ff7a1d0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1135556249}
   m_SourcePrefab: {fileID: 100100000, guid: 1e70c5710742e12469bf42be8ff7a1d0, type: 3}
+--- !u!1 &1135556248 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5249112197633698919, guid: 1e70c5710742e12469bf42be8ff7a1d0, type: 3}
+  m_PrefabInstance: {fileID: 1135556247}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1135556249
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1135556248}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a7a9082a03f8b246ae839097a66d336, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DoorID
+  targetScene: 3
 --- !u!1 &1136308135 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -2872050075963474894, guid: 08ef7a44f43c7da4281ee58e6cae63c1, type: 3}
@@ -43061,6 +43091,10 @@ PrefabInstance:
       propertyPath: keyAmount
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3336622982171556083, guid: fadd5392a1537dc4f97386099855faf4, type: 3}
+      propertyPath: levelDoor
+      value: 
+      objectReference: {fileID: 1135556248}
     - target: {fileID: 3336622982171556083, guid: fadd5392a1537dc4f97386099855faf4, type: 3}
       propertyPath: collectionMaxAmount
       value: 5
