@@ -15,6 +15,14 @@ public class LevelManager : MonoBehaviour
     public LivingRoomTV roomTV;
 
 
+    private void Start()
+    {
+        if (dialog.Length > 0)
+        {
+            StartCoroutine(PlayDialog(0));
+        }
+    }
+
     public void AddNote(int noteNumber)
     {
         notesCollected++;
@@ -32,7 +40,7 @@ public class LevelManager : MonoBehaviour
             }
         }
 
-        if (dialog.Length > 0)
+        if (dialog.Length > 0 && noteNumber > 0)
         {
             StartCoroutine(PlayDialog(noteNumber));
         }
@@ -58,7 +66,10 @@ public class LevelManager : MonoBehaviour
 
     public void PickupBlaster()
     {
-
+        if (dialog.Length > 0)
+        {
+            StartCoroutine(PlayDialog(2));
+        }
     }
     IEnumerator ReadNote(int noteNumber)
     {

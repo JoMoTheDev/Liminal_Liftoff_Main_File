@@ -1069,6 +1069,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4388290245949944424, guid: 1ebbc2b480d216948b56e0b24067c7ea, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4866244293715919718, guid: 1ebbc2b480d216948b56e0b24067c7ea, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -1098,6 +1102,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6416501395965859559, guid: 1ebbc2b480d216948b56e0b24067c7ea, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6599765460886874574, guid: 1ebbc2b480d216948b56e0b24067c7ea, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
@@ -2512,6 +2520,7 @@ MonoBehaviour:
   dialogDelay: 5
   shipPartsToCollect: 0
   notesToCollect: 0
+  roomTV: {fileID: 0}
 --- !u!4 &961792577
 Transform:
   m_ObjectHideFlags: 0
@@ -2900,7 +2909,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PickupableObject
   objectType: Note
-  objectNumber: 4
+  objectNumber: 0
 --- !u!1 &1431822605
 GameObject:
   m_ObjectHideFlags: 0
@@ -4138,7 +4147,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PickupableObject
   objectType: Note
-  objectNumber: 3
+  objectNumber: 0
 --- !u!1001 &1267820540673819254
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4391,7 +4400,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PickupableObject
   objectType: Note
-  objectNumber: 1
+  objectNumber: 4
 --- !u!1001 &3786902255708538418
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4484,7 +4493,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PickupableObject
   objectType: Note
-  objectNumber: 0
+  objectNumber: 3
 --- !u!1001 &6284205823703970615
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4633,7 +4642,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PickupableObject
   objectType: Note
-  objectNumber: 2
+  objectNumber: 8
 --- !u!4 &7146234367245015532 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7295363810426734688, guid: 9178d73d8ae5e3543a80f8e409835793, type: 3}
@@ -4652,7 +4661,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PickupableObject
   objectType: Note
-  objectNumber: 5
+  objectNumber: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
