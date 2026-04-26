@@ -14,13 +14,6 @@ public class PlayerHealth : MonoBehaviour
     public int playerHealth;
     public int playerMaxHealth;
 
-    public int damageTaken;
-
-    public bool touchingEnemy = false;
-    public bool canCo = false;
-
-    private bool canTakeDamage = true;
-
     private void Start()
     {
         playerHealth = playerMaxHealth;

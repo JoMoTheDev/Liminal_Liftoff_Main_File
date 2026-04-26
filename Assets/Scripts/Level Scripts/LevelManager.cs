@@ -7,6 +7,7 @@ public class LevelManager : MonoBehaviour
     public GameObject[] dialog;
     public GameObject[] notes;
     public GameObject bricks;
+    public GameObject gunGFX;
     public float dialogDelay = 10f;
     public int shipPartsToCollect;
     private int shipPartsCollected;
@@ -66,6 +67,7 @@ public class LevelManager : MonoBehaviour
 
     public void PickupBlaster()
     {
+        gunGFX.SetActive(true);
         if (dialog.Length > 0)
         {
             StartCoroutine(PlayDialog(2));

@@ -5,9 +5,6 @@ public class Raycaster : MonoBehaviour
 {
     public float raycastDistance = 10f;
 
-    public LayerMask collisionLayers;
-    public LayerMask interactLayer;
-
     private InteractManager interactManager;
 
     void Start()
@@ -20,7 +17,7 @@ public class Raycaster : MonoBehaviour
         RaycastHit hit;
         Vector3 direction = transform.TransformDirection(Vector3.forward);
 
-        if (/*Input.GetMouseButtonDown(1)*/ Input.GetKeyDown(KeyCode.E))
+        if (Input.GetMouseButtonDown(1) /*Input.GetKeyDown(KeyCode.E)*/)
         {
             if (Physics.Raycast(transform.position, direction, out hit, raycastDistance))
             {
