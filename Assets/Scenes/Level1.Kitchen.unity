@@ -1135,6 +1135,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3336622982171556083, guid: fadd5392a1537dc4f97386099855faf4, type: 3}
+      propertyPath: levelDoor
+      value: 
+      objectReference: {fileID: 7143836568211277544}
+    - target: {fileID: 3336622982171556083, guid: fadd5392a1537dc4f97386099855faf4, type: 3}
+      propertyPath: collectionMaxAmount
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3968663031697415494, guid: fadd5392a1537dc4f97386099855faf4, type: 3}
+      propertyPath: sceneToLoad
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4104257389998723348, guid: fadd5392a1537dc4f97386099855faf4, type: 3}
       propertyPath: healthSlider
       value: 
@@ -4710,7 +4722,7 @@ GameObject:
   - component: {fileID: 669897947}
   - component: {fileID: 669897946}
   - component: {fileID: 669897945}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: KitchenTapeRoll.Rocket
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5903,7 +5915,7 @@ GameObject:
   - component: {fileID: 1080315391}
   - component: {fileID: 1080315390}
   - component: {fileID: 1080315389}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: KitchenStickerStack.Rocket
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11230,6 +11242,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MomNote.010
       objectReference: {fileID: 0}
+    - target: {fileID: 3904576012031235671, guid: ab87581b37860ea4aa2aaff1e38d4fdf, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -11246,6 +11262,10 @@ PrefabInstance:
     - target: {fileID: 572245401880407992, guid: 0772b6284ffbab44f937e49046e1a137, type: 3}
       propertyPath: m_Name
       value: MomNote.9.TV
+      objectReference: {fileID: 0}
+    - target: {fileID: 572245401880407992, guid: 0772b6284ffbab44f937e49046e1a137, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 7927464355634904567, guid: 0772b6284ffbab44f937e49046e1a137, type: 3}
       propertyPath: m_LocalPosition.x
@@ -11349,6 +11369,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Note2.Calendar
       objectReference: {fileID: 0}
+    - target: {fileID: 4151803341452660763, guid: 90fbeae181c0367499910a391f70b5d7, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -11443,6 +11467,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DadNote.2.GroceryList
       objectReference: {fileID: 0}
+    - target: {fileID: 1115886263112849988, guid: 7d7bb7c043c21f84d92da225b5a479d2, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1839584786529503636, guid: 7d7bb7c043c21f84d92da225b5a479d2, type: 3}
       propertyPath: m_LocalPosition.x
       value: -7.498
@@ -11505,6 +11533,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SceneLoader
       objectReference: {fileID: 0}
+    - target: {fileID: 5249112197633698919, guid: 1e70c5710742e12469bf42be8ff7a1d0, type: 3}
+      propertyPath: m_TagString
+      value: Door
+      objectReference: {fileID: 0}
     - target: {fileID: 6182113186832591248, guid: 1e70c5710742e12469bf42be8ff7a1d0, type: 3}
       propertyPath: m_LocalPosition.x
       value: 18.48
@@ -11545,11 +11577,37 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 7062504763817268698, guid: 1e70c5710742e12469bf42be8ff7a1d0, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 8658239380100591339, guid: 1e70c5710742e12469bf42be8ff7a1d0, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5249112197633698919, guid: 1e70c5710742e12469bf42be8ff7a1d0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7143836568211277545}
   m_SourcePrefab: {fileID: 100100000, guid: 1e70c5710742e12469bf42be8ff7a1d0, type: 3}
+--- !u!1 &7143836568211277544 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5249112197633698919, guid: 1e70c5710742e12469bf42be8ff7a1d0, type: 3}
+  m_PrefabInstance: {fileID: 7143836568211277543}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7143836568211277545
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7143836568211277544}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a7a9082a03f8b246ae839097a66d336, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DoorID
+  targetScene: 2
 --- !u!4 &9098990125518738575 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3374259722921974584, guid: 90fbeae181c0367499910a391f70b5d7, type: 3}

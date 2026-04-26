@@ -352,6 +352,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3336622982171556083, guid: fadd5392a1537dc4f97386099855faf4, type: 3}
+      propertyPath: levelDoor
+      value: 
+      objectReference: {fileID: 444434978}
+    - target: {fileID: 3336622982171556083, guid: fadd5392a1537dc4f97386099855faf4, type: 3}
+      propertyPath: collectionMaxAmount
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4104257389998723348, guid: fadd5392a1537dc4f97386099855faf4, type: 3}
       propertyPath: healthSlider
       value: 
@@ -2321,11 +2329,41 @@ PrefabInstance:
       propertyPath: m_Size.z
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 7062504763817268698, guid: 1e70c5710742e12469bf42be8ff7a1d0, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8658239380100591339, guid: 1e70c5710742e12469bf42be8ff7a1d0, type: 3}
+      propertyPath: sceneToLoad
+      value: 4
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 8658239380100591339, guid: 1e70c5710742e12469bf42be8ff7a1d0, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5249112197633698919, guid: 1e70c5710742e12469bf42be8ff7a1d0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 444434979}
   m_SourcePrefab: {fileID: 100100000, guid: 1e70c5710742e12469bf42be8ff7a1d0, type: 3}
+--- !u!1 &444434978 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5249112197633698919, guid: 1e70c5710742e12469bf42be8ff7a1d0, type: 3}
+  m_PrefabInstance: {fileID: 444434977}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &444434979
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 444434978}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a7a9082a03f8b246ae839097a66d336, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DoorID
+  targetScene: 4
 --- !u!1 &493629907
 GameObject:
   m_ObjectHideFlags: 0
@@ -2766,7 +2804,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6042625812567403360, guid: 5931129645a5f734ebece52fce3d9bff, type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6138839805465686005, guid: 5931129645a5f734ebece52fce3d9bff, type: 3}
       propertyPath: m_Mesh
@@ -3005,6 +3043,10 @@ PrefabInstance:
     - target: {fileID: 2439132714129116591, guid: 4b61cb8e9c6b8634f96b73bba4e57495, type: 3}
       propertyPath: m_Name
       value: MomNote.14
+      objectReference: {fileID: 0}
+    - target: {fileID: 2439132714129116591, guid: 4b61cb8e9c6b8634f96b73bba4e57495, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5816710800943309142, guid: 4b61cb8e9c6b8634f96b73bba4e57495, type: 3}
       propertyPath: m_LocalScale.x
@@ -4549,6 +4591,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DadNote.3.Bill
       objectReference: {fileID: 0}
+    - target: {fileID: 4558023747165210673, guid: f72d6735a31f0fe4e95345a29736bcf9, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5099,6 +5145,10 @@ PrefabInstance:
     - target: {fileID: 4251868206712462332, guid: 3192997cdf2870248983f92ba8e26393, type: 3}
       propertyPath: m_Name
       value: MomNote.13
+      objectReference: {fileID: 0}
+    - target: {fileID: 4251868206712462332, guid: 3192997cdf2870248983f92ba8e26393, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8735399123237561010, guid: 3192997cdf2870248983f92ba8e26393, type: 3}
       propertyPath: m_LocalScale.x

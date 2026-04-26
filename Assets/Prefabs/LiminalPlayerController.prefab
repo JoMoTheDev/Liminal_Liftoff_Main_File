@@ -138,8 +138,8 @@ GameObject:
   - component: {fileID: 8904865758287607949}
   - component: {fileID: 4134230950781640258}
   - component: {fileID: 1192999528509550988}
-  - component: {fileID: 6842957383230088494}
   - component: {fileID: 267973202637405601}
+  - component: {fileID: 3336622982171556083}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -283,7 +283,7 @@ MonoBehaviour:
   raycastDistance: 10
   collisionLayers:
     serializedVersion: 2
-    m_Bits: 1088
+    m_Bits: 1024
   launchForce: 50
 --- !u!114 &8904865758287607949
 MonoBehaviour:
@@ -338,27 +338,7 @@ MonoBehaviour:
   moveForce: 300
   pickupLayer:
     serializedVersion: 2
-    m_Bits: 576
---- !u!114 &6842957383230088494
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3006034097951754939}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c13673d3040cfce4fa86e6176063f594, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Raycaster
-  raycastDistance: 10
-  keyAmount: 0
-  collisionLayers:
-    serializedVersion: 2
-    m_Bits: 64
-  interactLayer:
-    serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 512
 --- !u!114 &267973202637405601
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -376,6 +356,25 @@ MonoBehaviour:
   doorTag: Door
   simonTag: Simon
   simonCode: []
+--- !u!114 &3336622982171556083
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3006034097951754939}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4df57d95008887247a872d25835d2b47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PickUp
+  interactLayer:
+    serializedVersion: 2
+    m_Bits: 256
+  raycastDistance: 10
+  levelDoor: {fileID: 0}
+  collectionMaxAmount: 0
+  collectionAmount: 0
 --- !u!1 &3811054613821751700
 GameObject:
   m_ObjectHideFlags: 0
@@ -576,9 +575,11 @@ GameObject:
   m_Component:
   - component: {fileID: 9060147975824280824}
   - component: {fileID: 367196271770323786}
+  - component: {fileID: 7286930631486228319}
   - component: {fileID: 5832767160580701438}
   - component: {fileID: 502361480967407892}
   - component: {fileID: 4104257389998723348}
+  - component: {fileID: 3968663031697415494}
   m_Layer: 0
   m_Name: LiminalPlayerController
   m_TagString: Target
@@ -627,6 +628,29 @@ CharacterController:
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!136 &7286930631486228319
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7751882087704643534}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Height: 2
+  m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &5832767160580701438
 MonoBehaviour:
@@ -685,6 +709,20 @@ MonoBehaviour:
   damageTaken: 0
   touchingEnemy: 0
   canCo: 0
+--- !u!114 &3968663031697415494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7751882087704643534}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccf7fd6c42627a64b81db83fe8d030cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LoadScene
+  sceneToLoad: 0
+  isPassive: 0
 --- !u!1001 &882878770880321205
 PrefabInstance:
   m_ObjectHideFlags: 0
