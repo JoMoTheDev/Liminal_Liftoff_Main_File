@@ -22,6 +22,18 @@ public class KeyManager : MonoBehaviour
             interactedObject.GetComponent<LoadScene>().SceneLoad();
         }
 
+        if (interactedObject.GetComponent<Note>() != null)
+        {
+            interactedObject.GetComponent<Note>().NoteCollected();
+            Destroy(interactedObject);
+        }
+
+        if (interactedObject.GetComponent<RocketPart>() != null)
+        {
+            interactedObject.GetComponent<RocketPart>().PartCollected();
+            Destroy(interactedObject);
+        }
+
         if (interactedObject.CompareTag(doorTag) /*&& keyAmount >= 1*/)
         {
             keyAmount -= 1;

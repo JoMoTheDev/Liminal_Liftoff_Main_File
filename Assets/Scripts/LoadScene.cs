@@ -11,9 +11,9 @@ public class LoadScene : MonoBehaviour
         SceneManager.LoadScene(sceneToLoad);
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if (isPassive && collision.gameObject.CompareTag("Target") || collision.gameObject.CompareTag("Player"))
+        if (isPassive && other.gameObject.CompareTag("Target") || other.gameObject.CompareTag("Player"))
         {
             SceneManager.LoadScene(sceneToLoad);
         }
