@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1.5
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.49654433, g: 0.40771717, b: 0.59748423, a: 1}
-  m_SkyboxMaterial: {fileID: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 32cef35cf3b936544a16043661f3dd98, type: 2}
   m_HaloStrength: 0.521
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -39398,6 +39398,7 @@ MonoBehaviour:
   dialogDelay: 10
   shipPartsToCollect: 1
   notesToCollect: 4
+  roomTV: {fileID: 0}
 --- !u!4 &1753974073
 Transform:
   m_ObjectHideFlags: 0
@@ -43161,6 +43162,10 @@ PrefabInstance:
       objectReference: {fileID: 1135556248}
     - target: {fileID: 3336622982171556083, guid: fadd5392a1537dc4f97386099855faf4, type: 3}
       propertyPath: collectionMaxAmount
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3968663031697415494, guid: fadd5392a1537dc4f97386099855faf4, type: 3}
+      propertyPath: sceneToLoad
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4104257389998723348, guid: fadd5392a1537dc4f97386099855faf4, type: 3}
