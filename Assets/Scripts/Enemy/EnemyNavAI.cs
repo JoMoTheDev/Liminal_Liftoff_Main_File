@@ -8,6 +8,7 @@ public class EnemyNavAI : MonoBehaviour
 {
     public Animator animator;
 
+    public Transform enemyPlacement;
     private Transform target;
     private NavMeshAgent agent;
     private Vector3 wanderTarget;
@@ -18,6 +19,7 @@ public class EnemyNavAI : MonoBehaviour
     public bool shouldWander;
     private bool wasChasing = false;
     private bool isWalking;
+    private bool entrancePlaying;
     private bool entranceHasPlayed;
 
     public float agroRange;
@@ -53,11 +55,11 @@ public class EnemyNavAI : MonoBehaviour
         targetDistance = Vector3.Distance(transform.position, target.position);
         if (targetDistance <= agroRange)
         {
-            if (entranceAnimation != null && !entranceHasPlayed)
+            if (entranceAnimation != null && !entranceHasPlayed && !entrancePlaying)
             {
                 StartCoroutine(EntranceAnimation());
             }
-            else
+            else if (entranceHasPlayed)
             {
                 wasChasing = true;
                 agent.stoppingDistance = distanceFromPlayer;
@@ -120,8 +122,11 @@ public class EnemyNavAI : MonoBehaviour
 
     IEnumerator EntranceAnimation()
     {
+        entrancePlaying = true;
         animator.Play(entranceAnimation);
         yield return new WaitForSeconds(entranceLength);
+        gameObject.transform.position = enemyPlacement.position;
+        agent.enabled = true;
         entranceHasPlayed = true;
     }
 

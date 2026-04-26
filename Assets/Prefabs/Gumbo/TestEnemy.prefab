@@ -505,7 +505,7 @@ CapsuleCollider:
   m_Radius: 0.693006
   m_Height: 5.1777234
   m_Direction: 1
-  m_Center: {x: 0, y: 1.4432633, z: 0}
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!195 &2012388785313160785
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -525,7 +525,7 @@ NavMeshAgent:
   m_AutoBraking: 1
   m_AutoRepath: 1
   m_Height: 2
-  m_BaseOffset: 0
+  m_BaseOffset: 1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
 --- !u!114 &1276327422861246760
@@ -570,6 +570,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyNavAI
   animator: {fileID: 952566099671312360}
+  enemyPlacement: {fileID: 0}
   initialAnimation: Breath_Gumbo
   entranceAnimation: 
   shouldWander: 0
@@ -1974,7 +1975,7 @@ Transform:
   m_GameObject: {fileID: 8444880462521100340}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.5, z: 0}
+  m_LocalPosition: {x: 0, y: -1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
