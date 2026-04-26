@@ -5496,21 +5496,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 3681248177117975292, guid: 08ef7a44f43c7da4281ee58e6cae63c1, type: 3}
---- !u!114 &159144304
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 159144296}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f2a47b80618d797439ef7f824c24db4e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::LivingRoomManager
-  enemy: {fileID: 29411777}
-  mainDoor: {fileID: 1545510777}
-  isOn: 0
 --- !u!1 &165615462 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -6676435963528951443, guid: 08ef7a44f43c7da4281ee58e6cae63c1, type: 3}
@@ -13715,9 +13700,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8197003918657430957, guid: 08ef7a44f43c7da4281ee58e6cae63c1, type: 3}
       insertIndex: -1
       addedObject: {fileID: 159144302}
-    - targetCorrespondingSourceObject: {fileID: 8197003918657430957, guid: 08ef7a44f43c7da4281ee58e6cae63c1, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 159144304}
     - targetCorrespondingSourceObject: {fileID: 8193960591987839188, guid: 08ef7a44f43c7da4281ee58e6cae63c1, type: 3}
       insertIndex: -1
       addedObject: {fileID: 672584137}
@@ -23215,6 +23197,75 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0.004, y: 0, z: 0.001}
   m_TimeToStationary: 0.5
+--- !u!1 &973625700
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 973625703}
+  - component: {fileID: 973625702}
+  - component: {fileID: 973625701}
+  m_Layer: 0
+  m_Name: TVScriptObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!65 &973625701
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 973625700}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.7434852, y: 2.9339256, z: 4.4318314}
+  m_Center: {x: 0.091555, y: -0.4815054, z: -0.41585636}
+--- !u!114 &973625702
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 973625700}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2a47b80618d797439ef7f824c24db4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LivingRoomTV
+  enemy: {fileID: 29411777}
+  mainDoor: {fileID: 1545510777}
+  isOn: 0
+--- !u!4 &973625703
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 973625700}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.32, y: 7.08, z: 10.01}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &975548836 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -2222062949141887004, guid: 08ef7a44f43c7da4281ee58e6cae63c1, type: 3}
@@ -23972,6 +24023,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 911e525679b689b478fce45bcc95d881, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Note
+  objectType: Note
+  objectNumber: 0
 --- !u!1 &1012779459 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5425833866753075886, guid: 08ef7a44f43c7da4281ee58e6cae63c1, type: 3}
@@ -26045,6 +26098,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 911e525679b689b478fce45bcc95d881, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Note
+  objectType: Note
+  objectNumber: 0
 --- !u!1 &1132439890 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3780487109269282693, guid: 08ef7a44f43c7da4281ee58e6cae63c1, type: 3}
@@ -27837,6 +27892,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 911e525679b689b478fce45bcc95d881, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Note
+  objectType: Note
+  objectNumber: 0
 --- !u!1 &1195564280 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -8944357150387496662, guid: 08ef7a44f43c7da4281ee58e6cae63c1, type: 3}
@@ -36438,6 +36495,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 911e525679b689b478fce45bcc95d881, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Note
+  objectType: Note
+  objectNumber: 0
 --- !u!1 &1613471434 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -8856916482769721425, guid: 08ef7a44f43c7da4281ee58e6cae63c1, type: 3}
@@ -36765,7 +36824,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1629694248}
-  - component: {fileID: 1629694249}
+  - component: {fileID: 1629694251}
   - component: {fileID: 1629694250}
   m_Layer: 0
   m_Name: RocketFins
@@ -36791,18 +36850,6 @@ Transform:
   - {fileID: 1900306632}
   m_Father: {fileID: 259448198}
   m_LocalEulerAnglesHint: {x: 54.951, y: -90.063, z: -90.077}
---- !u!114 &1629694249
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1629694247}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5181df6e510655645a17a9c18d62d189, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::RocketPart
 --- !u!65 &1629694250
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -36824,6 +36871,20 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1.01, z: 0.62}
   m_Center: {x: -0.1, y: 0.2, z: -0.07}
+--- !u!114 &1629694251
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1629694247}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 911e525679b689b478fce45bcc95d881, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PickupableObject
+  objectType: Part
+  objectNumber: 0
 --- !u!1 &1632196763 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -843736369321929727, guid: 08ef7a44f43c7da4281ee58e6cae63c1, type: 3}
@@ -39285,7 +39346,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54d7aec643fb9c04ebe0a3134f7715da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LivingRoomManager
+  dialog: []
+  notes: []
   bricks: {fileID: 919132147625028311}
+  dialogDelay: 10
   shipPartsToCollect: 1
   notesToCollect: 4
 --- !u!4 &1753974073
@@ -47829,3 +47893,4 @@ SceneRoots:
   - {fileID: 1106614616}
   - {fileID: 894958941}
   - {fileID: 1753974073}
+  - {fileID: 973625703}

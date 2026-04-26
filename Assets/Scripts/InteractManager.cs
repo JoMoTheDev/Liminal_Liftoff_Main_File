@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class KeyManager : MonoBehaviour
+public class InteractManager : MonoBehaviour
 {
     public int keyAmount;
     public string keyTag, doorTag, simonTag;
@@ -13,7 +13,7 @@ public class KeyManager : MonoBehaviour
         if (interactedObject.CompareTag(keyTag))
         {
             keyAmount += 1;
-            Destroy(interactedObject);
+            interactedObject.SetActive(false);
             print(keyAmount);
         }
 
@@ -22,22 +22,16 @@ public class KeyManager : MonoBehaviour
             interactedObject.GetComponent<LoadScene>().SceneLoad();
         }
 
-        if (interactedObject.GetComponent<Note>() != null)
+        if (interactedObject.GetComponent<PickupableObject>() != null)
         {
-            interactedObject.GetComponent<Note>().NoteCollected();
-            Destroy(interactedObject);
-        }
-
-        if (interactedObject.GetComponent<RocketPart>() != null)
-        {
-            interactedObject.GetComponent<RocketPart>().PartCollected();
-            Destroy(interactedObject);
+            interactedObject.GetComponent<PickupableObject>().ObjectCollected();
+            interactedObject.SetActive(false);
         }
 
         if (interactedObject.CompareTag(doorTag) /*&& keyAmount >= 1*/)
         {
             keyAmount -= 1;
-            Destroy(interactedObject);
+            interactedObject.SetActive(false);
             print(keyAmount);
         }
         else if (interactedObject.CompareTag(doorTag) && keyAmount < 1)
