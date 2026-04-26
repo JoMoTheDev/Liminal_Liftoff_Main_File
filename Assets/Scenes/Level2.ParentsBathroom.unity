@@ -720,7 +720,7 @@ GameObject:
   - component: {fileID: 456080191}
   - component: {fileID: 456080190}
   - component: {fileID: 456080189}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: RocketBody
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -938,7 +938,7 @@ GameObject:
   - component: {fileID: 689258022}
   - component: {fileID: 689258021}
   - component: {fileID: 689258020}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: RocketBodyAlternate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2722,6 +2722,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3336622982171556083, guid: fadd5392a1537dc4f97386099855faf4, type: 3}
+      propertyPath: collectionMaxAmount
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4104257389998723348, guid: fadd5392a1537dc4f97386099855faf4, type: 3}
       propertyPath: healthSlider
       value: 
