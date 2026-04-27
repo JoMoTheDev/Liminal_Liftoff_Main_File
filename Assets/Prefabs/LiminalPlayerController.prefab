@@ -139,6 +139,7 @@ GameObject:
   - component: {fileID: 4134230950781640258}
   - component: {fileID: 1192999528509550988}
   - component: {fileID: 267973202637405601}
+  - component: {fileID: 4434763194562607367}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -334,7 +335,7 @@ MonoBehaviour:
   playerCamera: {fileID: 7199175151252955388}
   holdPoint: {fileID: 4488766911399425739}
   raycastRange: 10
-  moveForce: 1000
+  moveForce: 300
   pickupLayer:
     serializedVersion: 2
     m_Bits: 512
@@ -355,6 +356,25 @@ MonoBehaviour:
   doorTag: Door
   simonTag: Simon
   simonCode: []
+--- !u!114 &4434763194562607367
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3006034097951754939}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c13673d3040cfce4fa86e6176063f594, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Raycaster
+  raycastDistance: 10
+  collisionLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  interactLayer:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1 &3811054613821751700
 GameObject:
   m_ObjectHideFlags: 0
@@ -685,6 +705,9 @@ MonoBehaviour:
   healthSlider: {fileID: 0}
   playerHealth: 100
   playerMaxHealth: 100
+  damageTaken: 0
+  touchingEnemy: 0
+  canCo: 0
 --- !u!1001 &882878770880321205
 PrefabInstance:
   m_ObjectHideFlags: 0
