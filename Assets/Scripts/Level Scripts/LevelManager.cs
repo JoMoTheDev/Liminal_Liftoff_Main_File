@@ -1,4 +1,5 @@
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 
@@ -13,6 +14,7 @@ public class LevelManager : MonoBehaviour
     private int shipPartsCollected;
     public int notesToCollect;
     private int notesCollected;
+    public LoadScene sceneLoader;
     public LivingRoomTV roomTV;
 
 
@@ -45,6 +47,11 @@ public class LevelManager : MonoBehaviour
         {
             StartCoroutine(PlayDialog(noteNumber));
         }
+
+        if (sceneLoader != null)
+        {
+            LoadScene();
+        }
     }
 
     public void AddShipParts(int partNumber)
@@ -63,6 +70,11 @@ public class LevelManager : MonoBehaviour
         {
             StartCoroutine(PlayDialog(partNumber));
         }
+
+        if (sceneLoader != null)
+        {
+            LoadScene();
+        }
     }
 
     public void PickupBlaster()
@@ -73,6 +85,15 @@ public class LevelManager : MonoBehaviour
             StartCoroutine(PlayDialog(2));
         }
     }
+
+    void LoadScene()
+    {
+        if (shipPartsCollected >= shipPartsToCollect && notesCollected >= notesToCollect)
+        {
+            sceneLoader.SceneLoad();
+        }
+    }
+
     IEnumerator ReadNote(int noteNumber)
     {
         notes[noteNumber].SetActive(true);

@@ -27,6 +27,7 @@ public class BlasterShoot : MonoBehaviour
 
                     rb.useGravity = true;
                     rb.constraints = RigidbodyConstraints.None;
+                    hit.transform.gameObject.GetComponent<PickupableObject>().ableToBeCollected = true;
                 }
             }
             else
