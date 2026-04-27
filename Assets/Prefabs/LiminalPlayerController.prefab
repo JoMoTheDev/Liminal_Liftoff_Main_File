@@ -369,12 +369,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Raycaster
   raycastDistance: 10
-  collisionLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  interactLayer:
-    serializedVersion: 2
-    m_Bits: 0
 --- !u!1 &3811054613821751700
 GameObject:
   m_ObjectHideFlags: 0
@@ -579,6 +573,7 @@ GameObject:
   - component: {fileID: 5832767160580701438}
   - component: {fileID: 502361480967407892}
   - component: {fileID: 4104257389998723348}
+  - component: {fileID: 8749527115291388022}
   m_Layer: 0
   m_Name: LiminalPlayerController
   m_TagString: Target
@@ -705,9 +700,19 @@ MonoBehaviour:
   healthSlider: {fileID: 0}
   playerHealth: 100
   playerMaxHealth: 100
-  damageTaken: 0
-  touchingEnemy: 0
-  canCo: 0
+--- !u!114 &8749527115291388022
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7751882087704643534}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccf7fd6c42627a64b81db83fe8d030cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LoadScene
+  sceneToLoad: 0
 --- !u!1001 &882878770880321205
 PrefabInstance:
   m_ObjectHideFlags: 0
