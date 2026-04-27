@@ -24037,6 +24037,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Note
   objectType: Note
   objectNumber: 0
+  ableToBeCollected: 1
 --- !u!1 &1012779459 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5425833866753075886, guid: 08ef7a44f43c7da4281ee58e6cae63c1, type: 3}
@@ -26112,6 +26113,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Note
   objectType: Note
   objectNumber: 0
+  ableToBeCollected: 1
 --- !u!1 &1132439890 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3780487109269282693, guid: 08ef7a44f43c7da4281ee58e6cae63c1, type: 3}
@@ -26299,7 +26301,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a7a9082a03f8b246ae839097a66d336, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DoorID
-  targetScene: 3
+  targetScene: 5
 --- !u!1 &1136308135 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -2872050075963474894, guid: 08ef7a44f43c7da4281ee58e6cae63c1, type: 3}
@@ -27936,6 +27938,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Note
   objectType: Note
   objectNumber: 0
+  ableToBeCollected: 1
 --- !u!1 &1195564280 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -8944357150387496662, guid: 08ef7a44f43c7da4281ee58e6cae63c1, type: 3}
@@ -36543,6 +36546,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Note
   objectType: Note
   objectNumber: 0
+  ableToBeCollected: 1
 --- !u!1 &1613471434 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -8856916482769721425, guid: 08ef7a44f43c7da4281ee58e6cae63c1, type: 3}
@@ -36931,6 +36935,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PickupableObject
   objectType: Part
   objectNumber: 0
+  ableToBeCollected: 1
 --- !u!1 &1632196763 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -843736369321929727, guid: 08ef7a44f43c7da4281ee58e6cae63c1, type: 3}
@@ -39395,9 +39400,11 @@ MonoBehaviour:
   dialog: []
   notes: []
   bricks: {fileID: 919132147625028311}
+  gunGFX: {fileID: 0}
   dialogDelay: 10
   shipPartsToCollect: 1
   notesToCollect: 4
+  sceneLoader: {fileID: 0}
   roomTV: {fileID: 0}
 --- !u!4 &1753974073
 Transform:
