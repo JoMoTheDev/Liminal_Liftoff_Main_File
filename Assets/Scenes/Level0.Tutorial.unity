@@ -1565,12 +1565,12 @@ MonoBehaviour:
   notes:
   - {fileID: 290727181}
   - {fileID: 588367319}
-  - {fileID: 960950949}
   - {fileID: 145266513}
+  - {fileID: 960950949}
   - {fileID: 2073444099}
   bricks: {fileID: 0}
   gunGFX: {fileID: 629708563}
-  dialogDelay: 5
+  dialogDelay: 8.5
   shipPartsToCollect: 1
   notesToCollect: 5
   sceneLoader: {fileID: 1782136182}
@@ -2463,10 +2463,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1594666388226236610}
     m_Modifications:
-    - target: {fileID: 224452798981501611, guid: 1ebbc2b480d216948b56e0b24067c7ea, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.97528
-      objectReference: {fileID: 0}
     - target: {fileID: 1102072920053758156, guid: 1ebbc2b480d216948b56e0b24067c7ea, type: 3}
       propertyPath: m_Name
       value: Toggle.GFX
@@ -2635,8 +2631,20 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4285362617581849656, guid: 1ebbc2b480d216948b56e0b24067c7ea, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4299492483037880430, guid: 1ebbc2b480d216948b56e0b24067c7ea, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5500818415688184937, guid: 1ebbc2b480d216948b56e0b24067c7ea, type: 3}
       propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5782113670953237623, guid: 1ebbc2b480d216948b56e0b24067c7ea, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6129601247054393390, guid: 1ebbc2b480d216948b56e0b24067c7ea, type: 3}
@@ -2647,17 +2655,9 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6146788591926213483, guid: 1ebbc2b480d216948b56e0b24067c7ea, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.98603
-      objectReference: {fileID: 0}
     - target: {fileID: 7109247769281034591, guid: 1ebbc2b480d216948b56e0b24067c7ea, type: 3}
       propertyPath: m_Name
       value: Toggle
-      objectReference: {fileID: 0}
-    - target: {fileID: 7109247769281034591, guid: 1ebbc2b480d216948b56e0b24067c7ea, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7201136528884875060, guid: 1ebbc2b480d216948b56e0b24067c7ea, type: 3}
       propertyPath: m_AnchorMax.x
@@ -2669,6 +2669,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7201136528884875060, guid: 1ebbc2b480d216948b56e0b24067c7ea, type: 3}
       propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7638427702693900283, guid: 1ebbc2b480d216948b56e0b24067c7ea, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8268694738583824632, guid: 1ebbc2b480d216948b56e0b24067c7ea, type: 3}
