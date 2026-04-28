@@ -16,10 +16,12 @@ public class LevelManager : MonoBehaviour
     private int notesCollected;
     public LoadScene sceneLoader;
     public LivingRoomTV roomTV;
+    private PlayerController playerController;
 
 
     private void Start()
     {
+        playerController = FindFirstObjectByType<PlayerController>();
         if (dialog.Length > 0)
         {
             StartCoroutine(PlayDialog(0));
@@ -32,7 +34,7 @@ public class LevelManager : MonoBehaviour
 
         if (notes.Length > 0)
         {
-            StartCoroutine(ReadNote(noteNumber));
+            ReadNote(noteNumber);
         }
 
         if (notesCollected >= notesToCollect)
@@ -46,11 +48,6 @@ public class LevelManager : MonoBehaviour
         if (dialog.Length > 0 && noteNumber > 0)
         {
             StartCoroutine(PlayDialog(noteNumber));
-        }
-
-        if (sceneLoader != null)
-        {
-            LoadScene();
         }
     }
 
@@ -86,7 +83,7 @@ public class LevelManager : MonoBehaviour
         }
     }
 
-    void LoadScene()
+    public void LoadScene()
     {
         if (shipPartsCollected >= shipPartsToCollect && notesCollected >= notesToCollect)
         {
@@ -94,11 +91,26 @@ public class LevelManager : MonoBehaviour
         }
     }
 
-    IEnumerator ReadNote(int noteNumber)
+    void ReadNote(int noteNumber)
     {
         notes[noteNumber].SetActive(true);
-        yield return new WaitForSeconds(dialogDelay);
-        notes[noteNumber].SetActive(false);
+        Time.timeScale = 0;
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+        playerController.isPaused = true;
+    }
+
+    public void ExitNote()
+    {
+        Time.timeScale = 1;
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+        playerController.isPaused = false;
+
+        if (sceneLoader != null)
+        {
+            LoadScene();
+        }
     }
 
     IEnumerator PlayDialog(int dialogBlock)

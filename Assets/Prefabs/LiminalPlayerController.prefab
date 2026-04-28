@@ -369,12 +369,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Raycaster
   raycastDistance: 10
-  collisionLayers:
-    serializedVersion: 2
-    m_Bits: 0
   interactLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 256
 --- !u!1 &3811054613821751700
 GameObject:
   m_ObjectHideFlags: 0
@@ -673,6 +670,7 @@ MonoBehaviour:
   lookSensitivity: 1
   jumpKey: 32
   sprintKey: 304
+  isPaused: 0
 --- !u!114 &502361480967407892
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -705,9 +703,6 @@ MonoBehaviour:
   healthSlider: {fileID: 0}
   playerHealth: 100
   playerMaxHealth: 100
-  damageTaken: 0
-  touchingEnemy: 0
-  canCo: 0
 --- !u!1001 &882878770880321205
 PrefabInstance:
   m_ObjectHideFlags: 0

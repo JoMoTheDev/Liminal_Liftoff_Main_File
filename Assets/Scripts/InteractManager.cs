@@ -8,6 +8,13 @@ public class InteractManager : MonoBehaviour
     private int simonInt = 0;
     public string[] simonCode;
 
+    private LevelManager levelManager;
+
+    void Start()
+    {
+        levelManager = FindFirstObjectByType<LevelManager>().GetComponent<LevelManager>();
+    }
+
     public void Interact(GameObject interactedObject) // this will need to be expanded later to accommodate the full game 
     {
         if (interactedObject.CompareTag(keyTag))
@@ -50,6 +57,7 @@ public class InteractManager : MonoBehaviour
         if (buttonColor == simonCode[simonInt] && simonInt == (simonCode.Length - 1))
         {
             print("solved");
+            levelManager.LoadScene();
         }
         else if (buttonColor == simonCode[simonInt])
         {
