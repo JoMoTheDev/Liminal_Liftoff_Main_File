@@ -1,5 +1,5 @@
 using System.Collections;
-//using UnityEditor.Build.Reporting;
+using UnityEditor.Build.Reporting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
@@ -13,6 +13,13 @@ public class PlayerHealth : MonoBehaviour
 
     public int playerHealth;
     public int playerMaxHealth;
+
+    public int damageTaken;
+
+    public bool touchingEnemy = false;
+    public bool canCo = false;
+
+    private bool canTakeDamage = true;
 
     private void Start()
     {

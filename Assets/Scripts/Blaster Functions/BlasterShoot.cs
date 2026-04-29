@@ -18,16 +18,9 @@ public class BlasterShoot : MonoBehaviour
             {
                 Debug.DrawRay(transform.position, direction * hit.distance, Color.yellow);
                 Debug.Log("Target took " + blasterDamage + " damage!" );
-
-                if (hit.collider.gameObject.CompareTag("Note"))
+                if (hit.transform.gameObject.GetComponent<LivingRoomTV>())
                 {
-                    Rigidbody rb = hit.rigidbody;
-
-                    hit.collider.gameObject.layer = LayerMask.NameToLayer("InteractLayer");
-
-                    rb.useGravity = true;
-                    rb.constraints = RigidbodyConstraints.None;
-                    hit.transform.gameObject.GetComponent<PickupableObject>().ableToBeCollected = true;
+                    hit.transform.gameObject.GetComponent<LivingRoomTV>().ActivateEnemy();
                 }
             }
             else
