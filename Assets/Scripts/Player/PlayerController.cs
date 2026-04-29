@@ -54,7 +54,6 @@ public class PlayerController : MonoBehaviour
     public KeyCode sprintKey = KeyCode.LeftShift;
 
     private bool canJump = true;
-    public bool isPaused;
 
     private void Start()
     {
@@ -68,10 +67,7 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         InputManagement();
-        if (!isPaused)
-        {
-            Movement();
-        }
+        Movement();
     }
 
     private void Movement()
