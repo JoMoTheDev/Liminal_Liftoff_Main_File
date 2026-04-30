@@ -41,6 +41,15 @@ public class PlayerUI : MonoBehaviour
         {
             GunControls();
         }
+        if (Input.GetKeyDown(KeyCode.Q) && !isPaused)
+        {
+            gunMenuOpen = !gunMenuOpen;
+            Gun();
+        }
+        if (gunMenuOpen)
+        {
+            GunControls();
+        }
     }
 
     void Gun()
@@ -105,6 +114,8 @@ public class PlayerUI : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
 
     }
+
+
 
     public void LoadMenu()
     {
