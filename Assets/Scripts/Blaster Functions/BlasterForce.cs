@@ -23,6 +23,12 @@ public class BlasterForce : MonoBehaviour
                     Rigidbody rb = hit.rigidbody;
                     rb.AddForce(direction * launchForce, ForceMode.Impulse);
                     Debug.Log("Begone!");
+
+                    if (rb.CompareTag("Free"))
+                    {
+                        rb.useGravity = true;
+                        rb.constraints = RigidbodyConstraints.None;
+                    }
                 }
                 else
                 {
