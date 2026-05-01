@@ -5,6 +5,7 @@ public class BlasterLight : MonoBehaviour
     public float raycastDistance = 10f;
     public LayerMask collisionLayers;
     public GameObject flashlight;
+    public ParticleSystem lightParticles;
 
     private bool lightOn = false;
 
@@ -19,19 +20,13 @@ public class BlasterLight : MonoBehaviour
             {
                 lightOn = true;
                 flashlight.SetActive(true);
+                lightParticles.Play();
             }
             else
             {
                 lightOn = false;
                 flashlight.SetActive(false);
-            }
-        }
-        
-        if (lightOn)
-        {
-            if (Physics.Raycast(transform.position, direction, out hit, raycastDistance, collisionLayers))
-            {
-                Debug.Log("This is where you should be looking!");
+                lightParticles.Stop();
             }
         }
     }
