@@ -26,7 +26,6 @@ public class BlasterForce : MonoBehaviour
 
                     if (rb.CompareTag("Free"))
                     {
-                        rb.useGravity = true;
                         rb.constraints = RigidbodyConstraints.None;
                     }
                 }
