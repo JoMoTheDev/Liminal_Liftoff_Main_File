@@ -64,8 +64,16 @@ public class BlasterGravity : MonoBehaviour
 
     private void DropObject()
     {
-        heldObject.useGravity = true;
-        heldObject.linearDamping = 0;
-        heldObject = null;
+        if (heldObject.CompareTag("Lego"))
+        {
+            heldObject.linearDamping = 0;
+            heldObject = null;
+        }
+        else
+        {
+            heldObject.useGravity = true;
+            heldObject.linearDamping = 0;
+            heldObject = null;
+        }
     }
 }
