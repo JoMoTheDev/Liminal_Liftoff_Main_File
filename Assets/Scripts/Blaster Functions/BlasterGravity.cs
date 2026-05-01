@@ -10,6 +10,7 @@ public class BlasterGravity : MonoBehaviour
     public float raycastRange = 10f;
     public float moveForce = 150f;
     public LayerMask pickupLayer;
+    public ParticleSystem gravParticles;
 
     private Rigidbody heldObject;
     private float holdDistance;
@@ -41,6 +42,7 @@ public class BlasterGravity : MonoBehaviour
         if (Physics.Raycast(playerCamera.transform.position, playerCamera.transform.forward, out hit, raycastRange, pickupLayer))
         {
             Rigidbody rb = hit.rigidbody;
+            gravParticles.Play();
 
             if (rb != null)
             {
@@ -68,12 +70,14 @@ public class BlasterGravity : MonoBehaviour
         {
             heldObject.linearDamping = 0;
             heldObject = null;
+            gravParticles.Stop();
         }
         else
         {
             heldObject.useGravity = true;
             heldObject.linearDamping = 0;
             heldObject = null;
+            gravParticles.Stop();
         }
     }
 }
