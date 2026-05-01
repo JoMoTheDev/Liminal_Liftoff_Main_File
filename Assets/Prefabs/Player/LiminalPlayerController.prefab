@@ -268,7 +268,6 @@ GameObject:
   - component: {fileID: 605703841188225567}
   - component: {fileID: 5470375762452787541}
   - component: {fileID: 8904865758287607949}
-  - component: {fileID: 4134230950781640258}
   - component: {fileID: 1192999528509550988}
   - component: {fileID: 267973202637405601}
   - component: {fileID: 4434763194562607367}
@@ -438,24 +437,6 @@ MonoBehaviour:
     m_Bits: 64
   flashlight: {fileID: 202945196941324891}
   lightParticles: {fileID: 8950259718523681711}
---- !u!114 &4134230950781640258
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3006034097951754939}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fd4679a2cfc2d0c42b1a6ddcb57c12c0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::BlasterShoot
-  raycastDistance: 10
-  enemyTag: 
-  objectShootLayer:
-    serializedVersion: 2
-    m_Bits: 2048
-  blasterDamage: 50
 --- !u!114 &1192999528509550988
 MonoBehaviour:
   m_ObjectHideFlags: 0

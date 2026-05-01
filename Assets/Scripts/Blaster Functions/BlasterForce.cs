@@ -31,6 +31,13 @@ public class BlasterForce : MonoBehaviour
                     {
                         rb.constraints = RigidbodyConstraints.None;
                     }
+                    else if (rb.CompareTag("Note"))
+                    {
+                        hit.collider.gameObject.layer = LayerMask.NameToLayer("InteractLayer");
+
+                        rb.useGravity = true;
+                        rb.constraints = RigidbodyConstraints.None;
+                    }
                 }
                 else
                 {
