@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
@@ -9,11 +10,13 @@ public class LevelManager : MonoBehaviour
     public GameObject[] notes;
     public GameObject bricks;
     public GameObject gunGFX;
+    List<Transform> dialogSequence;
     public float dialogDelay = 10f;
     public int shipPartsToCollect;
     private int shipPartsCollected;
     public int notesToCollect;
     private int notesCollected;
+    private int dialogSeqIndex = 0;
     public LoadScene sceneLoader;
     public LivingRoomTV roomTV;
     private PlayerController playerController;
@@ -22,9 +25,36 @@ public class LevelManager : MonoBehaviour
     private void Start()
     {
         playerController = FindFirstObjectByType<PlayerController>();
+        dialogSequence = new List<Transform>();
         if (dialog.Length > 0)
         {
-            StartCoroutine(PlayDialog(0));
+            PlayDialog(0);
+        }
+    }
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.LeftShift) && dialogSequence.Count > 0)
+        {
+            if (dialogSeqIndex <= 0)
+            {
+                ExitDialog();
+            }
+            else
+            {
+                ChangeDialog(-1);
+            }
+        }
+
+        if (Input.GetKeyDown(KeyCode.Return) && dialogSequence.Count > 0)
+        {
+            if (dialogSeqIndex >= dialogSequence.Count - 1)
+            {
+                ExitDialog();
+            }
+            else 
+            {
+                ChangeDialog(1);
+            }
         }
     }
 
@@ -47,7 +77,7 @@ public class LevelManager : MonoBehaviour
 
         if (dialog.Length > 0 && noteNumber > 0)
         {
-            StartCoroutine(PlayDialog(noteNumber));
+            PlayDialog(noteNumber);
         }
     }
 
@@ -65,7 +95,7 @@ public class LevelManager : MonoBehaviour
 
         if (dialog != null)
         {
-            StartCoroutine(PlayDialog(partNumber));
+            PlayDialog(partNumber);
         }
 
         if (sceneLoader != null)
@@ -79,7 +109,7 @@ public class LevelManager : MonoBehaviour
         gunGFX.SetActive(true);
         if (dialog.Length > 0)
         {
-            StartCoroutine(PlayDialog(2));
+            PlayDialog(2);
         }
     }
 
@@ -113,14 +143,29 @@ public class LevelManager : MonoBehaviour
         }
     }
 
-    IEnumerator PlayDialog(int dialogBlock)
+    void PlayDialog(int dialogBlock)
     {
         GameObject block = dialog[dialogBlock];
+
         foreach (Transform dialog in block.transform)
         {
-            dialog.gameObject.SetActive(true);
-            yield return new WaitForSeconds(dialogDelay);
-            dialog.gameObject.SetActive(false);
+            dialogSequence.Add(dialog);
         }
+
+        dialogSequence[dialogSeqIndex].gameObject.SetActive(true);
+    }
+
+    void ChangeDialog(int dialogChange)
+    {
+        dialogSequence[dialogSeqIndex].gameObject.SetActive(false);
+        dialogSeqIndex += dialogChange;
+        dialogSequence[dialogSeqIndex].gameObject.SetActive(true);
+    }
+
+    void ExitDialog()
+    {
+        dialogSequence[dialogSeqIndex].gameObject.SetActive(false);
+        dialogSeqIndex = 0;
+        dialogSequence.Clear();
     }
 }
