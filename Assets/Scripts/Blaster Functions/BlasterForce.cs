@@ -4,6 +4,7 @@ public class BlasterForce : MonoBehaviour
 {
     [SerializeField] private float raycastDistance = 10f;
     [SerializeField] private LayerMask collisionLayers;
+    [SerializeField] private ParticleSystem forceParticles;
 
     [SerializeField] private float launchForce = 15f;
 
@@ -24,9 +25,10 @@ public class BlasterForce : MonoBehaviour
                     rb.AddForce(direction * launchForce, ForceMode.Impulse);
                     Debug.Log("Begone!");
 
+                    forceParticles.Play();
+
                     if (rb.CompareTag("Free"))
                     {
-                        rb.useGravity = true;
                         rb.constraints = RigidbodyConstraints.None;
                     }
                 }
