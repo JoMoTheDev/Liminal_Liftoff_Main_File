@@ -1640,6 +1640,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2589599948539428671, guid: fadd5392a1537dc4f97386099855faf4, type: 3}
+      propertyPath: gunMenu
+      value: 
+      objectReference: {fileID: 263672162}
+    - target: {fileID: 2589599948539428671, guid: fadd5392a1537dc4f97386099855faf4, type: 3}
+      propertyPath: pauseMenu
+      value: 
+      objectReference: {fileID: 263672161}
     - target: {fileID: 3336622982171556083, guid: fadd5392a1537dc4f97386099855faf4, type: 3}
       propertyPath: levelDoor
       value: 
@@ -1655,11 +1663,11 @@ PrefabInstance:
     - target: {fileID: 4104257389998723348, guid: fadd5392a1537dc4f97386099855faf4, type: 3}
       propertyPath: healthSlider
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 263672160}
     - target: {fileID: 4104257389998723348, guid: fadd5392a1537dc4f97386099855faf4, type: 3}
       propertyPath: HealthNumbers
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 263672159}
     - target: {fileID: 7751882087704643534, guid: fadd5392a1537dc4f97386099855faf4, type: 3}
       propertyPath: m_Name
       value: LiminalPlayerController
@@ -2952,6 +2960,38 @@ GameObject:
 --- !u!224 &263672158 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3771798575839885861, guid: 1ebbc2b480d216948b56e0b24067c7ea, type: 3}
+  m_PrefabInstance: {fileID: 263672156}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &263672159 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7730545056574020165, guid: 1ebbc2b480d216948b56e0b24067c7ea, type: 3}
+  m_PrefabInstance: {fileID: 263672156}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
+--- !u!114 &263672160 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6428421949491737151, guid: 1ebbc2b480d216948b56e0b24067c7ea, type: 3}
+  m_PrefabInstance: {fileID: 263672156}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Slider
+--- !u!1 &263672161 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 384730501066942532, guid: 1ebbc2b480d216948b56e0b24067c7ea, type: 3}
+  m_PrefabInstance: {fileID: 263672156}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &263672162 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3514889085188941952, guid: 1ebbc2b480d216948b56e0b24067c7ea, type: 3}
   m_PrefabInstance: {fileID: 263672156}
   m_PrefabAsset: {fileID: 0}
 --- !u!54 &267528858
