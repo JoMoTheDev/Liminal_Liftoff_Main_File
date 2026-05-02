@@ -5687,6 +5687,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1175039362}
     m_Modifications:
+    - target: {fileID: 910937015161868636, guid: 1ebbc2b480d216948b56e0b24067c7ea, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 910937015161868636, guid: 1ebbc2b480d216948b56e0b24067c7ea, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2593566785239292635, guid: 1ebbc2b480d216948b56e0b24067c7ea, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -8117,6 +8125,30 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 502361480967407892, guid: fadd5392a1537dc4f97386099855faf4, type: 3}
+      propertyPath: gravLight
+      value: 
+      objectReference: {fileID: 1328538433}
+    - target: {fileID: 502361480967407892, guid: fadd5392a1537dc4f97386099855faf4, type: 3}
+      propertyPath: spotLight
+      value: 
+      objectReference: {fileID: 1328538431}
+    - target: {fileID: 502361480967407892, guid: fadd5392a1537dc4f97386099855faf4, type: 3}
+      propertyPath: forceLight
+      value: 
+      objectReference: {fileID: 1328538432}
+    - target: {fileID: 2348643027035579894, guid: fadd5392a1537dc4f97386099855faf4, type: 3}
+      propertyPath: m_Range
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 2348643027035579894, guid: fadd5392a1537dc4f97386099855faf4, type: 3}
+      propertyPath: m_SpotAngle
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 2348643027035579894, guid: fadd5392a1537dc4f97386099855faf4, type: 3}
+      propertyPath: m_InnerSpotAngle
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 3336622982171556083, guid: fadd5392a1537dc4f97386099855faf4, type: 3}
       propertyPath: levelDoor
       value: 
@@ -8178,6 +8210,21 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fadd5392a1537dc4f97386099855faf4, type: 3}
+--- !u!1 &1328538431 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 586093414890752823, guid: fadd5392a1537dc4f97386099855faf4, type: 3}
+  m_PrefabInstance: {fileID: 1328538430}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1328538432 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4491494975834960681, guid: fadd5392a1537dc4f97386099855faf4, type: 3}
+  m_PrefabInstance: {fileID: 1328538430}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1328538433 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3436109761615738574, guid: fadd5392a1537dc4f97386099855faf4, type: 3}
+  m_PrefabInstance: {fileID: 1328538430}
+  m_PrefabAsset: {fileID: 0}
 --- !u!43 &1361669273
 Mesh:
   m_ObjectHideFlags: 0
