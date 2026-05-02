@@ -11,7 +11,6 @@ public class LevelManager : MonoBehaviour
     public GameObject bricks;
     public GameObject gunGFX;
     List<Transform> dialogSequence;
-    public float dialogDelay = 10f;
     public int shipPartsToCollect;
     private int shipPartsCollected;
     public int notesToCollect;
@@ -28,7 +27,7 @@ public class LevelManager : MonoBehaviour
         dialogSequence = new List<Transform>();
         if (dialog.Length > 0)
         {
-            PlayDialog(0);
+            PlayDialog(dialog.Length - 2);
         }
     }
     void Update()
@@ -75,7 +74,7 @@ public class LevelManager : MonoBehaviour
             }
         }
 
-        if (dialog.Length > 0 && noteNumber > 0)
+        if (dialog.Length > 0 && noteNumber == 0)
         {
             PlayDialog(noteNumber);
         }
@@ -97,11 +96,6 @@ public class LevelManager : MonoBehaviour
         {
             PlayDialog(partNumber);
         }
-
-        if (sceneLoader != null)
-        {
-            LoadScene();
-        }
     }
 
     public void PickupBlaster()
@@ -109,7 +103,7 @@ public class LevelManager : MonoBehaviour
         gunGFX.SetActive(true);
         if (dialog.Length > 0)
         {
-            PlayDialog(2);
+            PlayDialog(dialog.Length - 1);
         }
     }
 
@@ -143,7 +137,7 @@ public class LevelManager : MonoBehaviour
         }
     }
 
-    void PlayDialog(int dialogBlock)
+    public void PlayDialog(int dialogBlock)
     {
         GameObject block = dialog[dialogBlock];
 
@@ -162,10 +156,15 @@ public class LevelManager : MonoBehaviour
         dialogSequence[dialogSeqIndex].gameObject.SetActive(true);
     }
 
-    void ExitDialog()
+    public void ExitDialog()
     {
         dialogSequence[dialogSeqIndex].gameObject.SetActive(false);
         dialogSeqIndex = 0;
         dialogSequence.Clear();
+
+        if (sceneLoader != null)
+        {
+            LoadScene();
+        }
     }
 }
