@@ -17,6 +17,7 @@ public class PlayerController : MonoBehaviour
     private Vector3 moveDirection;
 
     private CharacterController controller;
+    private Transform playerModel;
     private Transform camera;
 
     [Header("Movement")]
@@ -60,6 +61,7 @@ public class PlayerController : MonoBehaviour
     {
         controller = GetComponent<CharacterController>();
         camera = GameObject.Find("Camera").GetComponent<Transform>();
+        playerModel = GameObject.Find("PlayerGFX").GetComponent<Transform>();
 
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
@@ -91,6 +93,8 @@ public class PlayerController : MonoBehaviour
         xRotation = Mathf.Clamp(xRotation, -90f, 90f);
 
         camera.rotation = Quaternion.Euler(xRotation, yRotation, 0);
+
+        playerModel.rotation = Quaternion.Euler(0, yRotation, 0);
     }
 
     private void GroundMovement()

@@ -1187,7 +1187,8 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -4.8712797
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1039733880886001481, guid: dc390e1206ca88741a6ee6750646d033, type: 3}
     m_RemovedGameObjects:
     - {fileID: 4195091590860806559, guid: dc390e1206ca88741a6ee6750646d033, type: 3}
     - {fileID: 967812578433162698, guid: dc390e1206ca88741a6ee6750646d033, type: 3}
@@ -1447,7 +1448,7 @@ PrefabInstance:
       addedObject: {fileID: 566092346}
     - targetCorrespondingSourceObject: {fileID: 2539001613949054653, guid: dc390e1206ca88741a6ee6750646d033, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1770207316}
+      addedObject: {fileID: 1770207321}
     - targetCorrespondingSourceObject: {fileID: 8175500772128659208, guid: dc390e1206ca88741a6ee6750646d033, type: 3}
       insertIndex: -1
       addedObject: {fileID: 439762994}
@@ -4034,9 +4035,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 842252656589136243, guid: 08ef7a44f43c7da4281ee58e6cae63c1, type: 3}
       insertIndex: -1
       addedObject: {fileID: 96306034}
-    - targetCorrespondingSourceObject: {fileID: 9057711672908460886, guid: 08ef7a44f43c7da4281ee58e6cae63c1, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2037477012}
     - targetCorrespondingSourceObject: {fileID: -3709684444698435081, guid: 08ef7a44f43c7da4281ee58e6cae63c1, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1088791068}
@@ -6841,7 +6839,7 @@ GameObject:
   - component: {fileID: 186206504}
   m_Layer: 9
   m_Name: LegoBrick1 (10)
-  m_TagString: Untagged
+  m_TagString: Lego
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8672,6 +8670,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4879769935823335748, guid: 26713dfb55f07814993a49dabf1baf9a, type: 3}
+      propertyPath: ShapeModule.radiusThickness
+      value: 1.0000
+      objectReference: {fileID: 0}
+    - target: {fileID: 4879769935823335748, guid: 26713dfb55f07814993a49dabf1baf9a, type: 3}
       propertyPath: VelocityModule.inWorldSpace
       value: 1
       objectReference: {fileID: 0}
@@ -8823,7 +8825,7 @@ GameObject:
   - component: {fileID: 257147223}
   m_Layer: 9
   m_Name: LegoBrick2 (9)
-  m_TagString: Untagged
+  m_TagString: Lego
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10343,7 +10345,7 @@ GameObject:
   - component: {fileID: 320577213}
   m_Layer: 9
   m_Name: LegoBrick2 (10)
-  m_TagString: Untagged
+  m_TagString: Lego
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11290,7 +11292,7 @@ GameObject:
   - component: {fileID: 360618071}
   m_Layer: 9
   m_Name: LegoBrick1 (9)
-  m_TagString: Untagged
+  m_TagString: Lego
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13106,7 +13108,7 @@ GameObject:
   - component: {fileID: 459204324}
   m_Layer: 9
   m_Name: LegoBrick2 (11)
-  m_TagString: Untagged
+  m_TagString: Lego
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -24888,7 +24890,7 @@ GameObject:
   - component: {fileID: 972353967}
   m_Layer: 9
   m_Name: LegoBrick2 (8)
-  m_TagString: Untagged
+  m_TagString: Lego
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -28569,7 +28571,7 @@ GameObject:
   - component: {fileID: 1142806727}
   m_Layer: 9
   m_Name: LegoBrick1 (8)
-  m_TagString: Untagged
+  m_TagString: Lego
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -34179,7 +34181,7 @@ GameObject:
   - component: {fileID: 1410271486}
   m_Layer: 9
   m_Name: LegoBrick1 (7)
-  m_TagString: Untagged
+  m_TagString: Lego
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -42221,7 +42223,6 @@ MonoBehaviour:
   notes: []
   bricks: {fileID: 919132147625028311}
   gunGFX: {fileID: 0}
-  dialogDelay: 10
   shipPartsToCollect: 1
   notesToCollect: 4
   sceneLoader: {fileID: 0}
@@ -42541,8 +42542,8 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2539001613949054653, guid: dc390e1206ca88741a6ee6750646d033, type: 3}
   m_PrefabInstance: {fileID: 68603212}
   m_PrefabAsset: {fileID: 0}
---- !u!64 &1770207316
-MeshCollider:
+--- !u!65 &1770207321
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -42559,10 +42560,9 @@ MeshCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4275905164459447869, guid: 4b4249c6cc105fc4496ed60d387d79d4, type: 3}
+  serializedVersion: 3
+  m_Size: {x: 2.080714, y: 0.0000005310994, z: 3.5}
+  m_Center: {x: 0.00000017881398, y: -0.00000023841855, z: 0.00000047683716}
 --- !u!1 &1773491119 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1706745874836665237, guid: 08ef7a44f43c7da4281ee58e6cae63c1, type: 3}
@@ -48315,32 +48315,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -8003323812292751041, guid: 08ef7a44f43c7da4281ee58e6cae63c1, type: 3}
---- !u!1 &2037477008 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 9057711672908460886, guid: 08ef7a44f43c7da4281ee58e6cae63c1, type: 3}
-  m_PrefabInstance: {fileID: 96306032}
-  m_PrefabAsset: {fileID: 0}
---- !u!65 &2037477012
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2037477008}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 103.18204, y: 115.42846, z: 7.5011215}
-  m_Center: {x: -21.93185, y: 4.289744, z: -2.7522612}
 --- !u!1 &2039094189 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -4494208075057260473, guid: 08ef7a44f43c7da4281ee58e6cae63c1, type: 3}
@@ -50699,7 +50673,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!33 &1055916385320094346
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -50937,7 +50911,7 @@ GameObject:
   - component: {fileID: 5293081414583629931}
   m_Layer: 9
   m_Name: LegoBrick1
-  m_TagString: Untagged
+  m_TagString: Lego
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -51478,7 +51452,7 @@ GameObject:
   - component: {fileID: 8773149427108018837}
   m_Layer: 9
   m_Name: LegoBrick2
-  m_TagString: Untagged
+  m_TagString: Lego
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
