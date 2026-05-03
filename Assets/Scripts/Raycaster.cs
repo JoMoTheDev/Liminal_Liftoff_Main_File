@@ -5,16 +5,14 @@ public class Raycaster : MonoBehaviour
 {
     public float raycastDistance = 10f;
 
-    public int keyAmount = 0;
-
-    public LayerMask collisionLayers;
     public LayerMask interactLayer;
 
-    private KeyManager keyManager;
+    private InteractManager interactManager;
 
     void Start()
     {
-        keyManager = GetComponent<KeyManager>();
+        interactManager = GetComponent<InteractManager>();
+        interactLayer = LayerMask.GetMask("InteractLayer");
     }
 
     private void Update()
@@ -22,24 +20,11 @@ public class Raycaster : MonoBehaviour
         RaycastHit hit;
         Vector3 direction = transform.TransformDirection(Vector3.forward);
 
-        if (Input.GetKeyDown(KeyCode.F))
+        if (Input.GetMouseButtonDown(1) /*Input.GetKeyDown(KeyCode.E)*/)
         {
-            if (Physics.Raycast(transform.position, direction, out hit, raycastDistance, collisionLayers))
+            if (Physics.Raycast(transform.position, direction, out hit, raycastDistance, interactLayer))
             {
-                Debug.DrawRay(transform.position, direction * hit.distance, Color.yellow);
-                Debug.Log("That thing is " + hit.distance + " meters away!");
-            }
-            else
-            {
-                Debug.DrawRay(transform.position, direction * raycastDistance, Color.red);
-                Debug.Log("Nothing here!");
-            }
-        }
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            if (Physics.Raycast(transform.position, direction, out hit, raycastDistance))
-            {
-                keyManager.Interact(hit.transform.gameObject);
+                interactManager.Interact(hit.transform.gameObject);
                 Debug.DrawRay(transform.position, direction * raycastDistance, Color.blue);
             }
         }

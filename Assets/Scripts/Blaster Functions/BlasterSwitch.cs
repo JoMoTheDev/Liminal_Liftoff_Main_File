@@ -8,7 +8,7 @@ public class BlasterSwitch : MonoBehaviour
 
     public GameObject gravLight;
     public GameObject forceLight;
-    public GameObject shootLight;
+    public GameObject spotLight;
 
     private void Start()
     {
@@ -16,9 +16,12 @@ public class BlasterSwitch : MonoBehaviour
         {
             playerCamera.GetComponent<BlasterLight>(),
             playerCamera.GetComponent<BlasterGravity>(),
-            playerCamera.GetComponent<BlasterForce>(),
-            playerCamera.GetComponent<BlasterShoot>()
+            playerCamera.GetComponent<BlasterForce>()
+            //playerCamera.GetComponent<BlasterShoot>()
         };
+
+        ActivateModes(0);
+        spotLight.SetActive(true);
     }
     
     void ActivateModes(int index)
@@ -32,30 +35,30 @@ public class BlasterSwitch : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             ActivateModes(0);
+            spotLight.SetActive(true);
             gravLight.SetActive(false);
             forceLight.SetActive(false);
-            shootLight.SetActive(false);
         }
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
             ActivateModes(1);
+            spotLight.SetActive(false);
             gravLight.SetActive(true);
             forceLight.SetActive(false);
-            shootLight.SetActive(false);
         }
         if (Input.GetKeyDown(KeyCode.Alpha3))
         {
             ActivateModes(2);
+            spotLight.SetActive(false);
             gravLight.SetActive(false);
             forceLight.SetActive(true);
-            shootLight.SetActive(false);
         }
-        if (Input.GetKeyDown(KeyCode.Alpha4))
-        {
-            ActivateModes(3);
-            gravLight.SetActive(false);
-            forceLight.SetActive(false);
-            shootLight.SetActive(true);
-        }
+        //if (Input.GetKeyDown(KeyCode.Alpha4))
+        //{
+        //    ActivateModes(3);
+        //    gravLight.SetActive(false);
+        //    forceLight.SetActive(false);
+        //    spotLight.SetActive(true);
+        //}
     }
 }

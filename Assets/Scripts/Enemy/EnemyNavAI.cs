@@ -125,7 +125,10 @@ public class EnemyNavAI : MonoBehaviour
         entrancePlaying = true;
         animator.Play(entranceAnimation);
         yield return new WaitForSeconds(entranceLength);
-        gameObject.transform.position = enemyPlacement.position;
+        if (enemyPlacement != null)
+        {
+            gameObject.transform.position = enemyPlacement.position;
+        }
         agent.enabled = true;
         entranceHasPlayed = true;
     }
