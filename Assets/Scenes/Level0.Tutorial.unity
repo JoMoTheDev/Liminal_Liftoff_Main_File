@@ -5906,6 +5906,10 @@ PrefabInstance:
       propertyPath: keyAmount
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 502361480967407892, guid: fadd5392a1537dc4f97386099855faf4, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2589599948539428671, guid: fadd5392a1537dc4f97386099855faf4, type: 3}
       propertyPath: gunMenu
       value: 
@@ -6049,6 +6053,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fadd5392a1537dc4f97386099855faf4, type: 3}
+--- !u!114 &629708563 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 502361480967407892, guid: fadd5392a1537dc4f97386099855faf4, type: 3}
+  m_PrefabInstance: {fileID: 629708562}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 701ace92268c58246b2d718f33f2de5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BlasterSwitch
 --- !u!1 &631490677 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2383073463912515735, guid: 18faf9c52bad1f04485af7d48a8138f3, type: 3}
@@ -11614,6 +11629,7 @@ MonoBehaviour:
   - {fileID: 87408143}
   bricks: {fileID: 0}
   gunGFX: {fileID: 940423139}
+  blasterSwitch: {fileID: 629708563}
   shipPartsToCollect: 1
   notesToCollect: 5
   sceneLoader: {fileID: 1782136182}

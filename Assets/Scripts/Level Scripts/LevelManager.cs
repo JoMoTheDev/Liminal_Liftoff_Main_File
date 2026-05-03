@@ -10,6 +10,7 @@ public class LevelManager : MonoBehaviour
     public GameObject[] notes;
     public GameObject bricks;
     public GameObject gunGFX;
+    public BlasterSwitch blasterSwitch;
     List<Transform> dialogSequence;
     public int shipPartsToCollect;
     private int shipPartsCollected;
@@ -101,6 +102,7 @@ public class LevelManager : MonoBehaviour
     public void PickupBlaster()
     {
         gunGFX.SetActive(true);
+        blasterSwitch.enabled = true;
         if (dialog.Length > 0)
         {
             PlayDialog(dialog.Length - 1);
