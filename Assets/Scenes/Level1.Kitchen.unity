@@ -2684,6 +2684,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 943334652}
     m_Modifications:
+    - target: {fileID: 272959592181636547, guid: 1ebbc2b480d216948b56e0b24067c7ea, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 329777661984664524, guid: 1ebbc2b480d216948b56e0b24067c7ea, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 5
@@ -2816,6 +2820,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[5].m_Target
       value: 
       objectReference: {fileID: 229461196}
+    - target: {fileID: 3720979980035545525, guid: 1ebbc2b480d216948b56e0b24067c7ea, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3771798575839885861, guid: 1ebbc2b480d216948b56e0b24067c7ea, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -2908,6 +2916,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4866244293715919718, guid: 1ebbc2b480d216948b56e0b24067c7ea, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4959161533470111081, guid: 1ebbc2b480d216948b56e0b24067c7ea, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 5
@@ -2942,6 +2954,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6129601247054393390, guid: 1ebbc2b480d216948b56e0b24067c7ea, type: 3}
       propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6713910037016774459, guid: 1ebbc2b480d216948b56e0b24067c7ea, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7195029256856869393, guid: 1ebbc2b480d216948b56e0b24067c7ea, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7201136528884875060, guid: 1ebbc2b480d216948b56e0b24067c7ea, type: 3}
@@ -15793,7 +15813,6 @@ MonoBehaviour:
   - {fileID: 1358361488}
   bricks: {fileID: 0}
   gunGFX: {fileID: 170857429}
-  dialogDelay: 10
   shipPartsToCollect: 2
   notesToCollect: 4
   sceneLoader: {fileID: 7143836568211277546}
@@ -18554,7 +18573,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PickupableObject
   objectType: Note
-  objectNumber: 3
+  objectNumber: 2
   ableToBeCollected: 1
 --- !u!1001 &2224389749626471113
 PrefabInstance:
@@ -18571,6 +18590,10 @@ PrefabInstance:
     - target: {fileID: 572245401880407992, guid: 0772b6284ffbab44f937e49046e1a137, type: 3}
       propertyPath: m_Layer
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 572245401880407992, guid: 0772b6284ffbab44f937e49046e1a137, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7927464355634904567, guid: 0772b6284ffbab44f937e49046e1a137, type: 3}
       propertyPath: m_LocalPosition.x
@@ -18831,6 +18854,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 1115886263112849988, guid: 7d7bb7c043c21f84d92da225b5a479d2, type: 3}
+      propertyPath: m_TagString
+      value: Note
+      objectReference: {fileID: 0}
     - target: {fileID: 1839584786529503636, guid: 7d7bb7c043c21f84d92da225b5a479d2, type: 3}
       propertyPath: m_LocalPosition.x
       value: -7.498
@@ -19016,7 +19043,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PickupableObject
   objectType: Note
-  objectNumber: 2
+  objectNumber: 3
   ableToBeCollected: 1
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
