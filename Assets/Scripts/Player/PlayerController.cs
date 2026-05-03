@@ -24,7 +24,7 @@ public class PlayerController : MonoBehaviour
     [Range(0f, 10f), Tooltip("The target walk speed of the player.")]
     public float walkSpeed = 5f;
 
-    [Range(10f, 40f), Tooltip("The target sprint speed of the player.")]
+    [Range(5f, 20f), Tooltip("The target sprint speed of the player.")]
     public float sprintSpeed = 10f;
 
     [Range(0f, 100f), Tooltip("The speed at which the player goes from walking to sprinting.")]
