@@ -92,7 +92,7 @@ public class LevelManager : MonoBehaviour
             }
         }
 
-        if (dialog != null)
+        if (dialog.Length > 0)
         {
             PlayDialog(partNumber);
         }
