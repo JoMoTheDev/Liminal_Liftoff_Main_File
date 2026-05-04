@@ -98,11 +98,6 @@ public class LevelManager : MonoBehaviour
         {
             PlayDialog(partNumber);
         }
-
-        if (sceneLoader != null)
-        {
-            LoadScene();
-        }
     }
 
     public void PickupBlaster()
