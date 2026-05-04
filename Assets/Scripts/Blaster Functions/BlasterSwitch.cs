@@ -44,7 +44,7 @@ public class BlasterSwitch : MonoBehaviour
             ActivateModes(1);
             spotLight.SetActive(false);
             gravLight.SetActive(true);
-            forceLight.SetActive(true);
+            forceLight.SetActive(false);
         }
         if (Input.GetKeyDown(KeyCode.Alpha3))
         {

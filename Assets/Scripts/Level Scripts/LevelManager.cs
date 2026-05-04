@@ -10,8 +10,8 @@ public class LevelManager : MonoBehaviour
     public GameObject[] notes;
     public GameObject bricks;
     public GameObject gunGFX;
+    public BlasterSwitch blasterSwitch;
     List<Transform> dialogSequence;
-    public float dialogDelay = 10f;
     public int shipPartsToCollect;
     private int shipPartsCollected;
     public int notesToCollect;
@@ -19,6 +19,7 @@ public class LevelManager : MonoBehaviour
     private int dialogSeqIndex = 0;
     public LoadScene sceneLoader;
     public LivingRoomTV roomTV;
+    public DialogTrigger dialogTrigger;
     private PlayerController playerController;
 
 
@@ -28,7 +29,7 @@ public class LevelManager : MonoBehaviour
         dialogSequence = new List<Transform>();
         if (dialog.Length > 0)
         {
-            PlayDialog(0);
+            PlayDialog(dialog.Length - 2);
         }
     }
     void Update()
@@ -75,7 +76,7 @@ public class LevelManager : MonoBehaviour
             }
         }
 
-        if (dialog.Length > 0 && noteNumber > 0)
+        if (dialog.Length > 0 && noteNumber <= 2)
         {
             PlayDialog(noteNumber);
         }
@@ -93,23 +94,20 @@ public class LevelManager : MonoBehaviour
             }
         }
 
-        if (dialog != null)
+        if (dialog.Length > 0 && partNumber == 6)
         {
             PlayDialog(partNumber);
-        }
-
-        if (sceneLoader != null)
-        {
-            LoadScene();
         }
     }
 
     public void PickupBlaster()
     {
         gunGFX.SetActive(true);
+        blasterSwitch.enabled = true;
+        dialogTrigger.canPlay = true;
         if (dialog.Length > 0)
         {
-            PlayDialog(2);
+            PlayDialog(dialog.Length - 1);
         }
     }
 
@@ -143,7 +141,7 @@ public class LevelManager : MonoBehaviour
         }
     }
 
-    void PlayDialog(int dialogBlock)
+    public void PlayDialog(int dialogBlock)
     {
         GameObject block = dialog[dialogBlock];
 
@@ -162,10 +160,15 @@ public class LevelManager : MonoBehaviour
         dialogSequence[dialogSeqIndex].gameObject.SetActive(true);
     }
 
-    void ExitDialog()
+    public void ExitDialog()
     {
         dialogSequence[dialogSeqIndex].gameObject.SetActive(false);
         dialogSeqIndex = 0;
         dialogSequence.Clear();
+
+        if (sceneLoader != null)
+        {
+            LoadScene();
+        }
     }
 }
