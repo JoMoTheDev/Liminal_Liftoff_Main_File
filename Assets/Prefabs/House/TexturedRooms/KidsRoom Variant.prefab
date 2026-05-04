@@ -6799,7 +6799,7 @@ Transform:
   - {fileID: 8442261327975408491}
   - {fileID: 1730805901727684304}
   - {fileID: 7357191278593257227}
-  - {fileID: 4173680781704680206}
+  - {fileID: 4111814835323690319}
   - {fileID: 5300982836118723460}
   m_Father: {fileID: 3654660355992661980}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -36118,7 +36118,10 @@ GameObject:
   - component: {fileID: 2446967564076869775}
   - component: {fileID: 8954447554737567200}
   - component: {fileID: 4459685306217778500}
+<<<<<<< HEAD
   - component: {fileID: 5942171215447619577}
+=======
+>>>>>>> main
   m_Layer: 8
   m_Name: Cylinder.085
   m_TagString: Untagged
@@ -36134,12 +36137,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4670835244051860904}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.50000006, y: -0.49999994, z: -0.5000001, w: 0.49999988}
-  m_LocalPosition: {x: -0.19408399, y: -0.27235627, z: -0.2145241}
-  m_LocalScale: {x: 0.083393924, y: 0.08339393, z: 0.08339393}
+  m_LocalRotation: {x: 0.50000006, y: 0.4999999, z: 0.50000036, w: -0.49999973}
+  m_LocalPosition: {x: -0.8295567, y: -0.064305395, z: -0.1523757}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 4173680781704680206}
+  m_Children:
+  - {fileID: 7107477753513888019}
+  m_Father: {fileID: 4111814835323690319}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &8954447554737567200
 MeshFilter:
@@ -36198,6 +36202,7 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
+<<<<<<< HEAD
 --- !u!64 &5942171215447619577
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -36220,6 +36225,8 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -3277056140333134009, guid: f51c10a6ea5bcc040a7615da657d9263, type: 3}
+=======
+>>>>>>> main
 --- !u!1 &4718913561743299861
 GameObject:
   m_ObjectHideFlags: 0
@@ -41826,6 +41833,37 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &5459116236785870934
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7107477753513888019}
+  m_Layer: 8
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7107477753513888019
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5459116236785870934}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2446967564076869775}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5465539190441547884
 GameObject:
   m_ObjectHideFlags: 0
@@ -48642,39 +48680,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -2356520584452885163, guid: 9c98c766bcfa3414f86ff3baf17f57b9, type: 3}
---- !u!1 &6457822798007005392
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4173680781704680206}
-  m_Layer: 8
-  m_Name: KidsDoor
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &4173680781704680206
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6457822798007005392}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 2446967564076869775}
-  - {fileID: 4111814835323690319}
-  m_Father: {fileID: 611128240948274577}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6466713996026290363
 GameObject:
   m_ObjectHideFlags: 0
@@ -49517,10 +49522,14 @@ GameObject:
   - component: {fileID: 4111814835323690319}
   - component: {fileID: 4882815939396468855}
   - component: {fileID: 2923827628726710077}
+<<<<<<< HEAD
   - component: {fileID: 1691628240537813158}
+=======
+  - component: {fileID: 924729118802343590}
+>>>>>>> main
   m_Layer: 8
   m_Name: Kids Door
-  m_TagString: Untagged
+  m_TagString: Door
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -49533,12 +49542,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6565669532943776225}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.000000029802326, y: 0.000000029802326, z: -0.000000089406974, w: -1}
-  m_LocalPosition: {x: -0.12490421, y: -0.26699355, z: -0.20181721}
+  m_LocalRotation: {x: -0.000000044703484, y: 0.000000059604645, z: -0.000000074505806, w: -1}
+  m_LocalPosition: {x: -0.1249042, y: -0.26699355, z: -0.20181721}
   m_LocalScale: {x: 0.08339393, y: 0.08339393, z: 0.08339393}
   m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 4173680781704680206}
+  m_Children:
+  - {fileID: 2446967564076869775}
+  m_Father: {fileID: 611128240948274577}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &4882815939396468855
 MeshFilter:
@@ -49597,8 +49607,8 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &1691628240537813158
-MeshCollider:
+--- !u!65 &924729118802343590
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -49615,10 +49625,16 @@ MeshCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
+<<<<<<< HEAD
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 7295500297127023637, guid: f51c10a6ea5bcc040a7615da657d9263, type: 3}
+=======
+  serializedVersion: 3
+  m_Size: {x: 0.90888095, y: 0.11262193, z: 2.0230756}
+  m_Center: {x: -0.454442, y: 0.0033727298, z: -0.00020451695}
+>>>>>>> main
 --- !u!1 &6574922722429143906
 GameObject:
   m_ObjectHideFlags: 0
