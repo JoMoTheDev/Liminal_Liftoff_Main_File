@@ -49,7 +49,7 @@ public class BlasterGravity : MonoBehaviour
             {
                 heldObject = rb;
 
-                if (rb.CompareTag("Free") || rb.CompareTag("Note"))
+                if (rb.CompareTag("Free"))
                 {
                     rb.constraints = RigidbodyConstraints.None;
                 }

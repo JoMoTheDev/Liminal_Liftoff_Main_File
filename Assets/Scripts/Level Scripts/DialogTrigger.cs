@@ -28,10 +28,5 @@ public class DialogTrigger : MonoBehaviour
                 dialogTrigger.canPlay = true;
             }
         }
-
-        if (collision.gameObject.layer == LayerMask.NameToLayer("GravLayer"))
-        {
-            collision.gameObject.layer = LayerMask.NameToLayer("InteractLayer");
-        }
     }
 }
