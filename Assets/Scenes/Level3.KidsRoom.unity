@@ -155,7 +155,7 @@ MonoBehaviour:
   m_Center: {x: 2.5, y: -1.5, z: -3.38}
   m_LayerMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 3967
   m_UseGeometry: 0
   m_DefaultArea: 0
   m_GenerateLinks: 0
@@ -2660,6 +2660,10 @@ PrefabInstance:
       value: -7.863
       objectReference: {fileID: 0}
     - target: {fileID: 825226833826302544, guid: cb6d1212e6ac1114a82c766036b51ff3, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 825226833826302544, guid: cb6d1212e6ac1114a82c766036b51ff3, type: 3}
       propertyPath: m_TagString
       value: Ground
       objectReference: {fileID: 0}
@@ -2935,6 +2939,10 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 4d60ea1769c8ed64fb99208341e85586, type: 2}
+    - target: {fileID: 2173294401863370923, guid: cb6d1212e6ac1114a82c766036b51ff3, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 2203080127453009369, guid: cb6d1212e6ac1114a82c766036b51ff3, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -5817,7 +5825,7 @@ MonoBehaviour:
   notes: []
   bricks: {fileID: 0}
   gunGFX: {fileID: 1133914554}
-  dialogDelay: 10
+  blasterSwitch: {fileID: 0}
   shipPartsToCollect: 0
   notesToCollect: 0
   sceneLoader: {fileID: 2083659078}

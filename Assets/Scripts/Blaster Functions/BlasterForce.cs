@@ -22,21 +22,25 @@ public class BlasterForce : MonoBehaviour
                     Debug.DrawRay(transform.position, direction * hit.distance, Color.yellow);
 
                     Rigidbody rb = hit.rigidbody;
-                    rb.AddForce(direction * launchForce, ForceMode.Impulse);
-                    Debug.Log("Begone!");
-
                     forceParticles.Play();
 
-                    if (rb.CompareTag("Free"))
-                    {
-                        rb.constraints = RigidbodyConstraints.None;
-                    }
-                    else if (rb.CompareTag("Note"))
+                    if (rb.CompareTag("Note"))
                     {
                         hit.collider.gameObject.layer = LayerMask.NameToLayer("InteractLayer");
 
                         rb.useGravity = true;
                         rb.constraints = RigidbodyConstraints.None;
+                    }
+                    else
+                    {
+                        rb.AddForce(direction * launchForce, ForceMode.Impulse);
+                        Debug.Log("Begone!");
+
+
+                        if (rb.CompareTag("Free"))
+                        {
+                            rb.constraints = RigidbodyConstraints.None;
+                        }
                     }
                 }
                 else
