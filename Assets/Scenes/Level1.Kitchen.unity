@@ -1701,6 +1701,10 @@ PrefabInstance:
       propertyPath: HealthNumbers
       value: 
       objectReference: {fileID: 263672159}
+    - target: {fileID: 5832767160580701438, guid: fadd5392a1537dc4f97386099855faf4, type: 3}
+      propertyPath: jumpHeight
+      value: 0.4
+      objectReference: {fileID: 0}
     - target: {fileID: 7751882087704643534, guid: fadd5392a1537dc4f97386099855faf4, type: 3}
       propertyPath: m_Name
       value: LiminalPlayerController
@@ -6762,6 +6766,7 @@ MonoBehaviour:
   objectType: Part
   objectNumber: 4
   ableToBeCollected: 1
+  dialogTrigger: {fileID: 0}
 --- !u!54 &669897949
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -9313,6 +9318,7 @@ MonoBehaviour:
   objectType: Part
   objectNumber: 5
   ableToBeCollected: 1
+  dialogTrigger: {fileID: 0}
 --- !u!54 &1080315393
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -14324,13 +14330,73 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 643089d4c137ab944bf20fe2b9ba0fcd, type: 3}
       insertIndex: 13
       addedObject: {fileID: 1952145577}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6524209549112672481, guid: 643089d4c137ab944bf20fe2b9ba0fcd, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1727578447}
+    - targetCorrespondingSourceObject: {fileID: -6226504234668206483, guid: 643089d4c137ab944bf20fe2b9ba0fcd, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1727578446}
   m_SourcePrefab: {fileID: 100100000, guid: 643089d4c137ab944bf20fe2b9ba0fcd, type: 3}
 --- !u!4 &1727578443 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 643089d4c137ab944bf20fe2b9ba0fcd, type: 3}
   m_PrefabInstance: {fileID: 1727578442}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1727578444 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -6226504234668206483, guid: 643089d4c137ab944bf20fe2b9ba0fcd, type: 3}
+  m_PrefabInstance: {fileID: 1727578442}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1727578445 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6524209549112672481, guid: 643089d4c137ab944bf20fe2b9ba0fcd, type: 3}
+  m_PrefabInstance: {fileID: 1727578442}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &1727578446
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1727578444}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 5408416234463817255, guid: 643089d4c137ab944bf20fe2b9ba0fcd, type: 3}
+--- !u!64 &1727578447
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1727578445}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4465253623057157617, guid: 643089d4c137ab944bf20fe2b9ba0fcd, type: 3}
 --- !u!1 &1745358620
 GameObject:
   m_ObjectHideFlags: 0
@@ -15813,10 +15879,12 @@ MonoBehaviour:
   - {fileID: 1358361488}
   bricks: {fileID: 0}
   gunGFX: {fileID: 170857429}
+  blasterSwitch: {fileID: 0}
   shipPartsToCollect: 2
   notesToCollect: 4
   sceneLoader: {fileID: 7143836568211277546}
   roomTV: {fileID: 0}
+  dialogTrigger: {fileID: 0}
 --- !u!4 &1955285811
 Transform:
   m_ObjectHideFlags: 0
@@ -18575,6 +18643,7 @@ MonoBehaviour:
   objectType: Note
   objectNumber: 2
   ableToBeCollected: 1
+  dialogTrigger: {fileID: 0}
 --- !u!1001 &2224389749626471113
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18668,6 +18737,7 @@ MonoBehaviour:
   objectType: Note
   objectNumber: 1
   ableToBeCollected: 1
+  dialogTrigger: {fileID: 0}
 --- !u!1001 &3186948738192077961
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18939,6 +19009,7 @@ MonoBehaviour:
   objectType: Note
   objectNumber: 0
   ableToBeCollected: 1
+  dialogTrigger: {fileID: 0}
 --- !u!1001 &7143836568211277543
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19045,6 +19116,7 @@ MonoBehaviour:
   objectType: Note
   objectNumber: 3
   ableToBeCollected: 1
+  dialogTrigger: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
