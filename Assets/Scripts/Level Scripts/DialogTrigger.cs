@@ -3,9 +3,9 @@ using UnityEngine;
 public class DialogTrigger : MonoBehaviour
 {
     public int dialogToPlay;
-    public bool isPlayerActivated = false;
-    public bool canPlay = false;
+    public bool canPlay;
     public DialogTrigger dialogTrigger;
+    public GameObject triggerObject;
     private LevelManager levelManager;
 
     void Start()
@@ -15,27 +15,18 @@ public class DialogTrigger : MonoBehaviour
 
     private void OnTriggerEnter(Collider collision)
     {
-        if (canPlay)
+        if (collision.gameObject == triggerObject)
         {
-            if (isPlayerActivated && collision.gameObject.GetComponent<PlayerController>())
+            if (canPlay)
             {
                 levelManager.PlayDialog(dialogToPlay);
-            }
-            else if (collision.gameObject.GetComponent<PickupableObject>())
-            {
-                levelManager.PlayDialog(dialogToPlay);
-            }
-            else if (collision.gameObject.GetComponent<Rigidbody>())
-            {
-                levelManager.PlayDialog(dialogToPlay);
+                canPlay = false;
             }
 
             if (dialogTrigger  != null)
             {
                 dialogTrigger.canPlay = true;
             }
-
-            canPlay = false;
         }
     }
 }

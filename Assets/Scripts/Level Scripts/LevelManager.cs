@@ -19,6 +19,7 @@ public class LevelManager : MonoBehaviour
     private int dialogSeqIndex = 0;
     public LoadScene sceneLoader;
     public LivingRoomTV roomTV;
+    public DialogTrigger dialogTrigger;
     private PlayerController playerController;
 
 
@@ -75,7 +76,7 @@ public class LevelManager : MonoBehaviour
             }
         }
 
-        if (dialog.Length > 0 && noteNumber == 0)
+        if (dialog.Length > 0 && noteNumber <= 2)
         {
             PlayDialog(noteNumber);
         }
@@ -93,7 +94,7 @@ public class LevelManager : MonoBehaviour
             }
         }
 
-        if (dialog.Length > 0)
+        if (dialog.Length > 0 && partNumber == 6)
         {
             PlayDialog(partNumber);
         }
@@ -103,6 +104,7 @@ public class LevelManager : MonoBehaviour
     {
         gunGFX.SetActive(true);
         blasterSwitch.enabled = true;
+        dialogTrigger.canPlay = true;
         if (dialog.Length > 0)
         {
             PlayDialog(dialog.Length - 1);
