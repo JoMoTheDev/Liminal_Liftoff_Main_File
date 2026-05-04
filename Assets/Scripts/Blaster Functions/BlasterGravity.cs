@@ -1,3 +1,4 @@
+using Unity.Jobs;
 using UnityEngine;
 
 public class BlasterGravity : MonoBehaviour
@@ -47,6 +48,12 @@ public class BlasterGravity : MonoBehaviour
             if (rb != null)
             {
                 heldObject = rb;
+
+                if (rb.CompareTag("Free"))
+                {
+                    rb.constraints = RigidbodyConstraints.None;
+                }
+
                 heldObject.useGravity = false;
                 heldObject.linearDamping = 10;
 
