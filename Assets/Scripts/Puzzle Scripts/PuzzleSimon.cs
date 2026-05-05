@@ -4,15 +4,10 @@ public class PuzzleSimon : MonoBehaviour
 {
     public string buttonColor;
 
-    private InteractManager interactManager;
-
-    void Start()
-    {
-        interactManager = FindFirstObjectByType<InteractManager>();
-    }
+    public SimonManager simonManager;
 
     public void ButtonPress()
     {
-        interactManager.SolveSimon(buttonColor);
+        simonManager.SolveSimon(buttonColor);
     }
 }
