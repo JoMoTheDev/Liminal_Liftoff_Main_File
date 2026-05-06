@@ -29,7 +29,7 @@ public class DialogTrigger : MonoBehaviour
             }
         }
 
-        if (collision.gameObject.layer == LayerMask.NameToLayer("GravLayer"))
+        if (collision.gameObject.CompareTag("Note"))
         {
             collision.gameObject.layer = LayerMask.NameToLayer("InteractLayer");
         }
