@@ -8,9 +8,16 @@ public class SimonManager : MonoBehaviour
     public float LightLoopTime = 2f;
     private float currentLightLoop;
     private int simonInt = 0;
+    private int simonListInt = 0;
     public string[] simonCode;
     public GameObject[] simonLights;
-    public List<GameObject> lightsToFlash;
+    private List<GameObject> lightsToFlash;
+    private List<string> simonSoFar;
+
+    public AudioSource simonSource;
+    public AudioClip correctSound;
+    public AudioClip wrongSound;
+    public AudioClip nextRoundSound;
 
     private LevelManager levelManager;
 
@@ -18,6 +25,9 @@ public class SimonManager : MonoBehaviour
     {
         levelManager = FindFirstObjectByType<LevelManager>().GetComponent<LevelManager>();
         lightsToFlash = new List<GameObject>();
+        simonSoFar = new List<string>();
+        simonSoFar.Add(simonCode[0]);
+        simonSoFar.Add(simonCode[1]);
         AssignLights();
     }
 
@@ -41,20 +51,35 @@ public class SimonManager : MonoBehaviour
             print("solved");
             levelManager.LoadScene();
         }
-        else if (buttonColor == simonCode[simonInt])
+
+        if (buttonColor == simonSoFar[simonListInt] && buttonColor == simonCode[simonInt])
         {
-            print("correct " + simonCode[simonInt]);
-            simonInt += 1;
+            simonSource.PlayOneShot(nextRoundSound);
+            print("== correct " + simonCode[simonInt]);
+            if (simonInt > 0 && simonInt != (simonCode.Length - 1))
+            {
+                simonSoFar.Add(simonCode[simonInt + 1]);
+            }
+            simonInt++;
+            simonListInt = 0;
+        }
+        else if (buttonColor == simonSoFar[simonListInt] && buttonColor != simonCode[simonInt])
+        {
+            simonSource.PlayOneShot(correctSound);
+            print("!= correct " + simonCode[simonListInt]);
+            simonListInt++;
         }
         else
         {
-            print("wrong " + simonCode[simonInt]);
+            simonSource.PlayOneShot(wrongSound);
+            print("wrong " + simonCode[simonListInt]);
             simonInt = 0;
+            simonListInt = 0;
         }
         currentLightLoop = 0;
-        StopCoroutine(SimonLightLoop());
+        StopAllCoroutines();
 
-        StartCoroutine(ActivateLight());
+        StartCoroutine(ActivateLight(buttonColor));
     }
 
     void AssignLights()
@@ -80,6 +105,11 @@ public class SimonManager : MonoBehaviour
             }
             print(code);
         }
+
+        foreach (GameObject light in simonLights)
+        {
+            light.SetActive(false);
+        }
     }
 
     IEnumerator SimonLightLoop()
@@ -92,10 +122,27 @@ public class SimonManager : MonoBehaviour
         }
     }   
 
-    IEnumerator ActivateLight()
+    IEnumerator ActivateLight(string lightColor)
     {
-        lightsToFlash[simonInt].SetActive(true);
-        yield return new WaitForSeconds(0.1f);
-        lightsToFlash[simonInt].SetActive(false);
+        switch (lightColor)
+        {
+            case "Green":
+                simonLights[0].SetActive(true);
+                break;
+            case "Yellow":
+                simonLights[1].SetActive(true);
+                break;
+            case "Red":
+                simonLights[2].SetActive(true);
+                break;
+            case "Blue":
+                simonLights[3].SetActive(true);
+                break;
+        }
+        yield return new WaitForSeconds(0.5f);
+        simonLights[0].SetActive(false);
+        simonLights[1].SetActive(false);
+        simonLights[2].SetActive(false);
+        simonLights[3].SetActive(false);
     }
 }
