@@ -32,16 +32,7 @@ public class PlayerUI : MonoBehaviour
                 PauseGame();
             }
         }
-        if (Input.GetKeyDown(KeyCode.Q) && !isPaused)
-        {
-            gunMenuOpen = !gunMenuOpen;
-            Gun();
-        }
-        if (gunMenuOpen)
-        {
-            GunControls();
-        }
-        if (Input.GetKeyDown(KeyCode.Q) && !isPaused)
+        if (Input.GetKeyDown(KeyCode.Q))
         {
             gunMenuOpen = !gunMenuOpen;
             Gun();
