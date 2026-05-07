@@ -2621,7 +2621,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 756448541875184168, guid: 1ebbc2b480d216948b56e0b24067c7ea, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 824057014631894340, guid: 1ebbc2b480d216948b56e0b24067c7ea, type: 3}
       propertyPath: m_AnchorMax.x
@@ -2694,6 +2694,10 @@ PrefabInstance:
     - target: {fileID: 3569683128302054139, guid: 1ebbc2b480d216948b56e0b24067c7ea, type: 3}
       propertyPath: m_Name
       value: RocketBody.Checklist
+      objectReference: {fileID: 0}
+    - target: {fileID: 3569683128302054139, guid: 1ebbc2b480d216948b56e0b24067c7ea, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3771798575839885861, guid: 1ebbc2b480d216948b56e0b24067c7ea, type: 3}
       propertyPath: m_Pivot.x
@@ -2897,6 +2901,16 @@ GameObject:
 --- !u!224 &263672158 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3771798575839885861, guid: 1ebbc2b480d216948b56e0b24067c7ea, type: 3}
+  m_PrefabInstance: {fileID: 263672156}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &263672159 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3569683128302054139, guid: 1ebbc2b480d216948b56e0b24067c7ea, type: 3}
+  m_PrefabInstance: {fileID: 263672156}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &263672160 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6360036832722304532, guid: 1ebbc2b480d216948b56e0b24067c7ea, type: 3}
   m_PrefabInstance: {fileID: 263672156}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &266050772 stripped
@@ -22200,6 +22214,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::LevelManager
   dialog: []
   notes: []
+  notesUI: []
+  obtainedNotesUI: []
+  partsUI:
+  - {fileID: 263672160}
+  obtainedPartsUI:
+  - {fileID: 263672159}
   bricks: {fileID: 0}
   gunGFX: {fileID: 2117038557}
   blasterSwitch: {fileID: 0}
