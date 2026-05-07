@@ -1470,6 +1470,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PuzzleSimon
   buttonColor: Yellow
+  simonManager: {fileID: 0}
 --- !u!65 &108764165
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6294,6 +6295,71 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &964347442
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2116452545408743586, guid: 22455894bbd5ca444be6bc498be0fe34, type: 3}
+      propertyPath: lightChangeTime
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3533834799689249192, guid: 22455894bbd5ca444be6bc498be0fe34, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 3533834799689249192, guid: 22455894bbd5ca444be6bc498be0fe34, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3533834799689249192, guid: 22455894bbd5ca444be6bc498be0fe34, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 9.847
+      objectReference: {fileID: 0}
+    - target: {fileID: 3533834799689249192, guid: 22455894bbd5ca444be6bc498be0fe34, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3533834799689249192, guid: 22455894bbd5ca444be6bc498be0fe34, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3533834799689249192, guid: 22455894bbd5ca444be6bc498be0fe34, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 3533834799689249192, guid: 22455894bbd5ca444be6bc498be0fe34, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 3533834799689249192, guid: 22455894bbd5ca444be6bc498be0fe34, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 3533834799689249192, guid: 22455894bbd5ca444be6bc498be0fe34, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3533834799689249192, guid: 22455894bbd5ca444be6bc498be0fe34, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 4332913137422968149, guid: 22455894bbd5ca444be6bc498be0fe34, type: 3}
+      propertyPath: m_Name
+      value: Simon
+      objectReference: {fileID: 0}
+    - target: {fileID: 4332913137422968149, guid: 22455894bbd5ca444be6bc498be0fe34, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 22455894bbd5ca444be6bc498be0fe34, type: 3}
 --- !u!43 &980921243
 Mesh:
   m_ObjectHideFlags: 0
@@ -8740,6 +8806,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: 54.909973
       objectReference: {fileID: 0}
+    - target: {fileID: 910937015161868636, guid: 1ebbc2b480d216948b56e0b24067c7ea, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 910937015161868636, guid: 1ebbc2b480d216948b56e0b24067c7ea, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1624128851166986832, guid: 1ebbc2b480d216948b56e0b24067c7ea, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 54.909973
@@ -10345,7 +10419,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!33 &1369891666
 MeshFilter:
   m_ObjectHideFlags: 10
@@ -11124,6 +11198,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PuzzleSimon
   buttonColor: Green
+  simonManager: {fileID: 0}
 --- !u!65 &1422967982
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14577,6 +14652,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PuzzleSimon
   buttonColor: Red
+  simonManager: {fileID: 0}
 --- !u!65 &1840991254
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14760,6 +14836,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PuzzleSimon
   buttonColor: Blue
+  simonManager: {fileID: 0}
 --- !u!65 &1995206978
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15421,9 +15498,6 @@ MonoBehaviour:
   healthSlider: {fileID: 0}
   playerHealth: 100
   playerMaxHealth: 100
-  damageTaken: 0
-  touchingEnemy: 0
-  canCo: 0
 --- !u!1001 &1570754112583333264
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15525,6 +15599,10 @@ PrefabInstance:
     - target: {fileID: 1546052647264980212, guid: 662a57afaaec2f94796b90bafddbda50, type: 3}
       propertyPath: m_Name
       value: TestEnemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 1546052647264980212, guid: 662a57afaaec2f94796b90bafddbda50, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2012388785313160785, guid: 662a57afaaec2f94796b90bafddbda50, type: 3}
       propertyPath: m_BaseOffset
@@ -15694,6 +15772,7 @@ SceneRoots:
   - {fileID: 410087041}
   - {fileID: 832575519}
   - {fileID: 1369891670}
+  - {fileID: 964347442}
   - {fileID: 8723685027917132321}
   - {fileID: 380681189}
   - {fileID: 3713341161561274365}

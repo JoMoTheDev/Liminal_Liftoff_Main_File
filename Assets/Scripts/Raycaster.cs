@@ -22,10 +22,10 @@ public class Raycaster : MonoBehaviour
 
         if (Input.GetMouseButtonDown(1) /*Input.GetKeyDown(KeyCode.E)*/)
         {
+            Debug.DrawRay(transform.position, direction * raycastDistance, Color.blue, 1);
             if (Physics.Raycast(transform.position, direction, out hit, raycastDistance, interactLayer))
             {
                 interactManager.Interact(hit.transform.gameObject);
-                Debug.DrawRay(transform.position, direction * raycastDistance, Color.blue);
             }
         }
     }
