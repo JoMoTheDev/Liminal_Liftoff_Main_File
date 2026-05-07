@@ -5,6 +5,7 @@ public class BlasterForce : MonoBehaviour
     [SerializeField] private float raycastDistance = 10f;
     [SerializeField] private LayerMask collisionLayers;
     [SerializeField] private ParticleSystem forceParticles;
+    [SerializeField] private AudioSource forceSFX;
 
     [SerializeField] private float launchForce = 15f;
 
@@ -32,9 +33,9 @@ public class BlasterForce : MonoBehaviour
                     else
                     {
                         rb.AddForce(direction * launchForce, ForceMode.Impulse);
+                        forceSFX.Play();
+                        
                         Debug.Log("Begone!");
-
-
                         if (rb.CompareTag("Free"))
                         {
                             rb.constraints = RigidbodyConstraints.None;
