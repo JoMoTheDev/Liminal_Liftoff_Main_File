@@ -8,6 +8,10 @@ public class LevelManager : MonoBehaviour
 {
     public GameObject[] dialog;
     public GameObject[] notes;
+    public GameObject[] notesUI;
+    public GameObject[] obtainedNotesUI;
+    public GameObject[] partsUI;
+    public GameObject[] obtainedPartsUI;
     public GameObject bricks;
     public GameObject gunGFX;
     public BlasterSwitch blasterSwitch;
@@ -63,6 +67,12 @@ public class LevelManager : MonoBehaviour
     {
         notesCollected++;
 
+        if (noteNumber < notesUI.Length)
+        {
+            notesUI[noteNumber].SetActive(false);
+            obtainedNotesUI[noteNumber].SetActive(true);
+        }
+
         if (notes.Length > 0)
         {
             ReadNote(noteNumber);
@@ -86,6 +96,12 @@ public class LevelManager : MonoBehaviour
     {
         shipPartsCollected++;
 
+        if (partNumber < partsUI.Length)
+        {
+            partsUI[partNumber].SetActive(false);
+            obtainedPartsUI[partNumber].SetActive(true);
+        }
+
         if (shipPartsCollected >= shipPartsToCollect)
         {
             if (roomTV != null)
@@ -97,6 +113,8 @@ public class LevelManager : MonoBehaviour
         if (dialog.Length > 0 && partNumber == 6)
         {
             PlayDialog(partNumber);
+            partsUI[0].SetActive(false);
+            obtainedPartsUI[0].SetActive(true);
         }
 
         if (sceneLoader != null)
