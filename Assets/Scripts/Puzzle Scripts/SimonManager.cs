@@ -84,8 +84,6 @@ public class SimonManager : MonoBehaviour
 
     void AssignLights()
     {
-        print("assign lights start");
-
         foreach (string code in simonCode)
         {
             switch (code)
@@ -103,7 +101,6 @@ public class SimonManager : MonoBehaviour
                     lightsToFlash.Add(simonLights[3]);
                     break;
             }
-            print(code);
         }
 
         foreach (GameObject light in simonLights)
