@@ -163,4 +163,12 @@ public class PlayerController : MonoBehaviour
 
         canJump = true;
     }
+
+    public void SetRotation(Quaternion targetRotation)
+    {
+        yRotation = targetRotation.eulerAngles.y;
+
+        xRotation = 0;
+    }
+
 }
