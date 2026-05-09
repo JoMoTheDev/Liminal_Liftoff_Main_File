@@ -14,10 +14,9 @@ public class SimonManager : MonoBehaviour
     private List<GameObject> lightsToFlash;
     private List<string> simonSoFar;
 
-    public AudioSource simonSource;
-    public AudioClip correctSound;
-    public AudioClip wrongSound;
-    public AudioClip nextRoundSound;
+    public AudioSource correctSound;
+    public AudioSource wrongSound;
+    public AudioSource nextRoundSound;
 
     private LevelManager levelManager;
 
@@ -54,7 +53,7 @@ public class SimonManager : MonoBehaviour
 
         if (buttonColor == simonSoFar[simonListInt] && buttonColor == simonCode[simonInt])
         {
-            simonSource.PlayOneShot(nextRoundSound);
+            nextRoundSound.Play();
             print("== correct " + simonCode[simonInt]);
             if (simonInt > 0 && simonInt != (simonCode.Length - 1))
             {
@@ -65,13 +64,13 @@ public class SimonManager : MonoBehaviour
         }
         else if (buttonColor == simonSoFar[simonListInt] && buttonColor != simonCode[simonInt])
         {
-            simonSource.PlayOneShot(correctSound);
+            correctSound.Play();
             print("!= correct " + simonCode[simonListInt]);
             simonListInt++;
         }
         else
         {
-            simonSource.PlayOneShot(wrongSound);
+            wrongSound.Play();
             print("wrong " + simonCode[simonListInt]);
             simonInt = 0;
             simonListInt = 0;
