@@ -6,6 +6,8 @@ public class BlasterGravity : MonoBehaviour
     [Header("References")]
     public Camera playerCamera;
     public Transform holdPoint;
+    [SerializeField] private AudioSource gravPickUpSFX;
+    [SerializeField] private AudioSource gravDropSFX;
 
     [Header("Pickup Settings")]
     public float raycastRange = 10f;
@@ -56,6 +58,7 @@ public class BlasterGravity : MonoBehaviour
 
                 heldObject.useGravity = false;
                 heldObject.linearDamping = 10;
+                gravPickUpSFX.Play();
 
                 holdDistance = Vector3.Distance(playerCamera.transform.position, hit.point);
             }
@@ -86,5 +89,6 @@ public class BlasterGravity : MonoBehaviour
             heldObject = null;
             gravParticles.Stop();
         }
+        gravDropSFX.Play();
     }
 }
